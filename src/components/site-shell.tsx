@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -16,7 +17,7 @@ const navLinks = [
 
 export function SiteShell({ children }: { children: ReactNode }) {
   const pathname = usePathname() || "/";
-  const activeLink = navLinks.find((l) => l.href !== "/" && pathname.startsWith(l.href)) || navLinks.find((l) => l.href === pathname);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[#f7fbff] text-zinc-900">
@@ -52,15 +53,51 @@ export function SiteShell({ children }: { children: ReactNode }) {
             })}
           </nav>
 
-          <Link
-            href="/contact"
-            className="rounded-full border border-zinc-300 bg-white/80 px-4 py-2 text-sm font-medium text-zinc-900 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-          >
-            Book a call
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/contact"
+              className="hidden sm:inline-flex rounded-full border border-zinc-300 bg-white/80 px-4 py-2 text-sm font-medium text-zinc-900 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+            >
+              Book a call
+            </Link>
+
+            <button 
+              className="flex items-center justify-center rounded-full bg-[#f2fbff] p-2 text-[#0b6fa8] md:hidden"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle mobile menu"
+            >
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
 
-        {/* subtle active link indicator only — removed page pill for cleaner UX */}
+        {/* Mobile Nav Overlay */}
+        {isMobileMenuOpen && (
+          <div className="absolute left-0 top-full w-full border-b border-zinc-200/70 bg-white/95 px-6 py-6 shadow-xl backdrop-blur-xl md:hidden">
+            <nav className="flex flex-col gap-5">
+              {navLinks.map((link) => {
+                const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`block text-lg font-medium ${isActive ? "text-[#0b6fa8]" : "text-zinc-700"}`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+              <Link
+                href="/contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="mt-4 inline-flex items-center justify-center rounded-full bg-[#0b6fa8] px-6 py-3.5 text-base font-semibold text-white shadow-sm"
+              >
+                Book a strategy call
+              </Link>
+            </nav>
+          </div>
+        )}
       </header>
 
       {children}
