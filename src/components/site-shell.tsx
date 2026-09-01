@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, type ReactNode } from "react";
 import { Menu, X } from "lucide-react";
+import { SiteFooter } from "./site-footer";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -103,15 +104,16 @@ export function SiteShell({ children }: { children: ReactNode }) {
       {children}
 
       <footer id="contact" className="mx-auto max-w-7xl px-6 pb-16 pt-8 lg:px-8">
-        <div className="rounded-[32px] border border-[#cdeeff] bg-white p-8 shadow-[0_24px_80px_rgba(11,111,168,0.05)] sm:p-10">
+        {/* <div className="rounded-[32px] border border-[#cdeeff] bg-white p-8 shadow-[0_24px_80px_rgba(11,111,168,0.05)] sm:p-10"> */}
+        <div>
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <p className="text-sm font-medium tracking-[0.24em] text-[#0b6fa8] uppercase">Let's talk</p>
+              <p className="text-sm font-medium tracking-[0.24em] text-[#0b6fa8] uppercase">Let&apos;s talk</p>
               <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-[-0.03em] text-zinc-950 sm:text-4xl">
-                Ready to raise the standard of your growth?
+                Ready to turn your website into your best salesperson?
               </h2>
               <p className="mt-4 max-w-xl text-base leading-7 text-zinc-600">
-                We take on a limited number of engagements each quarter so every partnership gets the focus it deserves.
+                Book a free growth audit. We&apos;ll review your site, identify what&apos;s costing you leads, and show you exactly how to fix it.
               </p>
             </div>
             <Link
@@ -123,6 +125,8 @@ export function SiteShell({ children }: { children: ReactNode }) {
           </div>
         </div>
       </footer>
+      
+      <SiteFooter />
     </div>
   );
 }

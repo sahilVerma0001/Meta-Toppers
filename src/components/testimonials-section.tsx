@@ -6,17 +6,17 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const testimonials = [
   {
-    quote: "Meta Toppers completely transformed our lead generation. Our new property portal receives highly qualified buyer inquiries every single day.",
+    quote: "Meta Toppers didn&apos;t just build us a website — they built us a lead machine. We went from 5 inquiries a week to over 30. The ROI paid for the project in the first month.",
     name: "Sarah Jenkins",
-    role: "VP of Marketing, Elevate Real Estate",
+    role: "VP of Marketing, Elevate Luxury Realty",
   },
   {
-    quote: "They built a stunning website that showcases our luxury listings perfectly, and their SEO strategy drove a 45% increase in local traffic.",
+    quote: "Their SEO strategy took us from page 3 to the top 3 results in our market. We&apos;re now getting organic leads every single day without spending a dollar on ads.",
     name: "Marcus Chen",
     role: "Founder, Chen & Associates",
   },
   {
-    quote: "The digital campaigns they engineered for our new development sold out phase one in record time. Exceptional work.",
+    quote: "The landing pages they built for our new development sold out Phase 1 in record time. We&apos;ve never seen conversion rates like this. Truly exceptional work.",
     name: "David Ross",
     role: "Director of Sales, Paramount Developments",
   },
@@ -43,7 +43,7 @@ export function TestimonialsSection() {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <p className="text-sm font-medium tracking-[0.24em] text-[#0b6fa8] uppercase">Testimonials</p>
+        <p className="text-sm font-medium tracking-[0.24em] text-[#0b6fa8] uppercase">What our clients say</p>
         
         <div className="mx-auto mt-6 flex max-w-3xl flex-col items-center min-h-[220px] sm:min-h-[200px] justify-center">
           <div className="mb-4 text-[#0b6fa8]/30">
@@ -59,9 +59,10 @@ export function TestimonialsSection() {
               transition={{ duration: 0.4, ease: "easeOut" }}
               className="flex flex-col items-center"
             >
-              <blockquote className="text-2xl font-semibold tracking-[-0.02em] text-zinc-950 sm:text-3xl leading-[1.4]">
-                “{t.quote}”
-              </blockquote>
+              <blockquote
+                className="text-2xl font-semibold tracking-[-0.02em] text-zinc-950 sm:text-3xl leading-[1.4]"
+                dangerouslySetInnerHTML={{ __html: `\u201C${t.quote}\u201D` }}
+              />
               
               <div className="mt-8">
                 <div className="text-base font-semibold text-zinc-900">{t.name}</div>
@@ -81,14 +82,7 @@ export function TestimonialsSection() {
             />
           ))}
         </div>
-
-        <div className="mt-12 flex flex-wrap justify-center gap-4 sm:gap-8 border-t border-[#e8f5ff] pt-8">
-          {['Elevate', 'Chen & Assoc', 'Paramount'].map((logo) => (
-            <div key={logo} className="flex h-12 items-center justify-center rounded-2xl bg-[#f2fbff] px-6 text-sm font-bold tracking-wider text-[#0b6fa8]/60 border border-[#cdeeff]">
-              {logo.toUpperCase()}
-            </div>
-          ))}
-        </div>
+        
       </div>
     </section>
   );

@@ -5,28 +5,28 @@ import { SiteShell } from "@/components/site-shell";
 const industries = [
   {
     title: "SaaS",
-    description: "Sharper positioning and conversion systems for companies selling to ambitious buyers.",
+    description: "Convert free users to paid. We build landing pages, run targeted campaigns, and optimize funnels for SaaS companies.",
     icon: TrendingUp,
   },
   {
     title: "Real Estate",
-    description: "High-converting property portals and lead generation systems for digital real estate.",
+    description: "Property portals, lead capture systems, and local SEO that bring in qualified buyers and sellers every day.",
     icon: Home,
     href: "/industries/real-estate",
   },
   {
-    title: "Professional services",
-    description: "A premium digital presence that makes expertise feel credible and easy to trust.",
+    title: "Professional Services",
+    description: "Websites that establish instant credibility and turn visitors into booked consultations.",
     icon: Briefcase,
   },
   {
     title: "Fintech",
-    description: "Messaging, trust, and clarity that help complex products feel instantly understandable.",
+    description: "Make complex products feel simple. We build trust through clear messaging and intuitive digital experiences.",
     icon: Building2,
   },
   {
-    title: "Consumer brands",
-    description: "Brand storytelling and growth systems designed to create attention with intent.",
+    title: "Consumer Brands",
+    description: "E-commerce optimization, brand storytelling, and growth campaigns that drive both awareness and sales.",
     icon: Compass,
   },
 ];
@@ -40,20 +40,20 @@ export default function IndustriesPage() {
             <div className="max-w-3xl">
               <p className="text-sm font-medium tracking-[0.24em] text-[#0b6fa8] uppercase">Industries</p>
               <h1 className="mt-4 text-4xl font-semibold tracking-[-0.03em] text-zinc-950 sm:text-5xl">
-                We tailor growth systems to the realities of your market.
+                We build growth systems tailored to your industry.
               </h1>
               <p className="mt-6 text-lg leading-8 text-zinc-600">
-                From early-stage ventures to established companies, our work adapts to the context, audience, and commercial goals that matter most.
+                Different industries need different approaches. We adapt our strategy, messaging, and tech stack to match the way your customers actually buy.
               </p>
               <Link href="/contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#0b6fa8] px-5 py-3 text-sm font-medium text-white transition hover:bg-[#085c8b]">
-                Discuss your industry
+                Talk about your industry
                 <ArrowRight size={16} />
               </Link>
             </div>
             <div className="rounded-[24px] border border-[#cdeeff] bg-[#f2fbff] p-6 shadow-sm">
-              <p className="text-sm font-medium tracking-[0.24em] text-[#0b6fa8] uppercase">Market fit</p>
+              <p className="text-sm font-medium tracking-[0.24em] text-[#0b6fa8] uppercase">Our approach</p>
               <p className="mt-3 text-base leading-8 text-zinc-600">
-                We tailor the voice, offer, and experience to the audience you want to win over, whether that’s investors, buyers, or high-value clients.
+                We don&apos;t just swap out logos. Every campaign, landing page, and funnel is built around the specific language, objections, and buying patterns of your target audience.
               </p>
             </div>
           </div>

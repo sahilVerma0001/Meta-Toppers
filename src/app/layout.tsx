@@ -14,16 +14,16 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://metatoppers.com"),
-  title: "Meta Toppers | Real Estate Digital Marketing & Web Design",
+  title: "Meta Toppers | Premium Web Design & Digital Marketing Agency",
   description:
-    "Meta Toppers engineers premium digital experiences, lead generation, and growth systems for top-tier real estate brands.",
+    "We design high-converting websites and run data-driven marketing campaigns for ambitious brands. Strategy, design, and growth — all under one roof.",
   icons: {
     icon: "/MetaToppers-bg.png",
     apple: "/MetaToppers-bg.png",
   },
   openGraph: {
-    title: "Meta Toppers | Real Estate Digital Marketing",
-    description: "Meta Toppers engineers premium digital experiences and growth systems for ambitious real estate brands.",
+    title: "Meta Toppers — Premium Web Design & Digital Marketing",
+    description: "We design high-converting websites and run data-driven marketing campaigns for ambitious brands. Strategy, design, and growth — all under one roof.",
     url: "https://metatoppers.com",
     siteName: "Meta Toppers",
     images: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Meta Toppers Cover Image",
+        alt: "Meta Toppers — Premium Web Design & Digital Marketing",
       },
     ],
     locale: "en_US",
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Meta Toppers | Real Estate Digital Marketing",
-    description: "Meta Toppers engineers premium digital experiences and growth systems for ambitious real estate brands.",
+    title: "Meta Toppers — Premium Web Design & Digital Marketing",
+    description: "We design high-converting websites and run data-driven marketing campaigns for ambitious brands.",
     images: ["/og-image.jpg"],
   },
 };

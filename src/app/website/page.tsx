@@ -18,13 +18,13 @@ export default function WebsitePage() {
           <div className="max-w-3xl">
             <p className="text-sm font-medium tracking-[0.24em] text-[#0b6fa8] uppercase">Website services</p>
             <h1 className="mt-4 text-4xl font-semibold tracking-[-0.03em] text-zinc-950 sm:text-5xl">
-              Professional websites that convert and communicate trust.
+              A website that works as hard as you do.
             </h1>
             <p className="mt-6 text-lg leading-8 text-zinc-600">
-              We design and build conversion-focused websites and landing pages with clear messaging, modern UI, and reliable performance. From discovery to launch, we own the experience.
+              We design and build conversion-focused websites that look premium, load fast, and actually generate leads. From discovery to launch in as little as 3 weeks.
             </p>
             <Link href="/contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#0b6fa8] px-5 py-3 text-sm font-medium text-white transition hover:bg-[#085c8b]">
-              Talk about a website
+              Get a free website audit
               <ArrowRight size={16} />
             </Link>
           </div>

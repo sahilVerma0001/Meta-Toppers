@@ -9,66 +9,66 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    title: "Web Design & Development",
-    copy: "We build fast, secure, and immersive websites engineered to convert your visitors into high-value clients.",
+    title: "Websites That Convert",
+    copy: "We build fast, stunning websites engineered to turn your visitors into paying clients — not just impress them.",
     icon: PanelsTopLeft,
   },
   {
-    title: "Digital Marketing & SEO",
-    copy: "Data-driven campaigns and search optimization that put your brand in front of the right audience at the right time.",
+    title: "SEO & Paid Ads That Drive Revenue",
+    copy: "Data-driven campaigns and search optimization that put your brand in front of buyers who are ready to act.",
     icon: Orbit,
   },
   {
-    title: "Lead Generation",
-    copy: "From social ads to lifecycle funnels, we design tailored systems that create predictable pipeline momentum.",
+    title: "Lead Generation Systems",
+    copy: "From social ads to automated funnels, we build tailored systems that deliver qualified leads on autopilot.",
     icon: Sparkles,
   },
 ];
 
 export const steps = [
   {
-    title: "01. Strategy & UX Planning",
-    copy: "We map out user journeys, identify conversion bottlenecks, and build a digital strategy designed to hit your goals.",
+    title: "01. Research & Strategy",
+    copy: "We audit your current digital presence, study your competitors, and map a clear plan to outperform them.",
   },
   {
-    title: "02. Design & Development",
-    copy: "Our team crafts premium, high-performing websites and digital assets that elevate your brand's market authority.",
+    title: "02. Design & Build",
+    copy: "Our team designs and develops a premium website and marketing assets — built to convert from day one.",
   },
   {
-    title: "03. Marketing & Scaling",
-    copy: "We launch targeted campaigns and continuously optimize for SEO and performance to drive compounding growth.",
+    title: "03. Launch & Scale",
+    copy: "We launch targeted campaigns, track every metric, and continuously optimize to compound your results month over month.",
   },
 ];
 
 export const metrics = [
-  { label: "average lift in qualified pipeline", value: "+37%" },
-  { label: "time to launch high-conviction campaigns", value: "3 weeks" },
-  { label: "client retention across flagship engagements", value: "94%" },
+  { label: "average increase in qualified leads", value: "+146%" },
+  { label: "from kickoff to live website", value: "21 days" },
+  { label: "of clients stay beyond year one", value: "96%" },
 ];
 
 export const heroTags = ['SaaS', 'Professional services', 'Fintech', 'Consumer brands'];
 
 export const features = [
-  { title: "Custom Web Solutions", copy: "We don't use templates. Every website is custom-engineered for your specific audience and goals." },
-  { title: "Measurable ROI", copy: "We connect digital decisions to commercial outcomes. Every campaign is built to drive actual revenue." },
-  { title: "Brand Authority", copy: "We design premium digital experiences that immediately establish trust and credibility in your market." },
-  { title: "End-to-End Execution", copy: "From the first line of code to the final marketing campaign, we handle the entire growth process." },
+  { title: "No Templates, Ever", copy: "Every website is custom-designed for your specific audience, goals, and brand — because cookie-cutter doesn\u2019t convert." },
+  { title: "Every Dollar Tracked", copy: "We connect every campaign to real revenue. You\u2019ll always know exactly what\u2019s working and what your ROI is." },
+  { title: "Look Like the Market Leader", copy: "We design digital experiences that make your brand look like the most trusted, established player in your space." },
+  { title: "One Team, Zero Handoffs", copy: "Strategy, design, development, and marketing — all handled by one team. No freelancer roulette, no communication gaps." },
 ];
 
 export const topics = [
-  { title: "Services", copy: "Growth strategy, digital positioning, and conversion-focused execution for ambitious companies." },
-  { title: "Industries", copy: "Tailored thinking for companies that need relevance, trust, and sharper market positioning." },
-  { title: "Case Studies", copy: "Proof-led stories that show how growth systems turn strategy into measurable commercial results." },
-  { title: "Portfolio", copy: "A premium showcase of digital experiences, brand systems, and high-performance launches." },
-  { title: "Blogs", copy: "Thoughtful insights into growth, positioning, marketing, and the realities of scaling intelligently." },
-  { title: "About", copy: "A clear view of the team, the philosophy, and the way Meta Toppers approaches growth." },
-  { title: "Careers", copy: "A place for exceptional talent to join a studio focused on ideas, execution, and craft." },
-  { title: "Contact", copy: "Direct access to start a conversation around positioning, demand, or your next growth chapter." },
-  { title: "Growth Consulting", copy: "A strategic starting point for business owners who want sharper thinking and a stronger path forward." },
+  { title: "Services", copy: "Web design, SEO, paid ads, and lead generation — everything you need to grow online, under one roof." },
+  { title: "Industries", copy: "We tailor our approach for Real Estate, SaaS, Fintech, Professional Services, and Consumer Brands." },
+  { title: "Case Studies", copy: "Real results from real clients — see exactly how we helped businesses like yours grow revenue and leads." },
+  { title: "Portfolio", copy: "Browse our best work: high-converting websites, brand systems, and digital experiences we\u2019ve launched." },
+  { title: "Blogs", copy: "Practical insights on web design, marketing, SEO, and growing a business in the digital age." },
+  { title: "About", copy: "Meet the team behind Meta Toppers — who we are, how we work, and why clients trust us." },
+  { title: "Careers", copy: "Join a team that values craft, clear thinking, and building things that actually move the needle." },
+  { title: "Contact", copy: "Ready to talk? Book a free growth audit and let\u2019s figure out how to get you more clients." },
+  { title: "Growth Consulting", copy: "Not sure where to start? We\u2019ll audit your digital presence and give you a clear roadmap — free." },
 ];
 
 export const caseStudies = [
-  { name: "Aurelia Health", result: "Repositioned the brand and doubled demo conversion in 6 weeks." },
-  { name: "Northfield Capital", result: "Built a trust-centered web experience that accelerated qualified inbound meetings." },
-  { name: "LumenOS", result: "Launched a premium demand engine that elevated both brand value and pipeline quality." },
+  { name: "Elevate Luxury Realty", result: "Built a custom property portal that increased high-net-worth lead volume by 60% in 8 weeks." },
+  { name: "Chen & Associates", result: "Redesigned their website and local SEO strategy — doubled organic seller leads within 90 days." },
+  { name: "Paramount Developments", result: "Designed a high-converting landing page ecosystem that sold out Phase 1 of a $50M development." },
 ];

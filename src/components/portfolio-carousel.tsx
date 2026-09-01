@@ -2,28 +2,33 @@
 
 import { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, ArrowRight, MoveUpRight } from "lucide-react";
 
 const mockCases = [
   {
     title: "Elevate Luxury Realty",
-    summary: "Built a custom property portal that increased high-net-worth lead volume by 60%.",
+    summary: "Built a custom property portal that increased high-net-worth lead volume by 60% in 8 weeks.",
     role: "Website & Lead Gen",
+    image: "/images/luxury-realty.jpg",
   },
   {
     title: "Paramount Developments",
-    summary: "Designed a high-converting landing page ecosystem for a $50M new development.",
+    summary: "Designed landing pages that sold out Phase 1 of a $50M development in record time.",
     role: "Landing Pages & SEO",
+    image: "/images/development-landing.jpg",
   },
   {
     title: "Chen & Associates",
-    summary: "Executed a local SEO and web redesign strategy that doubled organic seller leads.",
+    summary: "Redesigned their website and local SEO — doubled organic seller leads within 90 days.",
     role: "Website & SEO",
+    image: "/images/seo-dashboard.jpg",
   },
   {
     title: "Skyline Brokerage",
-    summary: "Full MLS/IDX integration and CRM setup to automate agent workflows.",
+    summary: "Full MLS/IDX integration and CRM setup that cut agent response time by 70%.",
     role: "Platform Integration",
+    image: "/images/brokerage-crm.jpg",
   }
 ];
 
@@ -32,7 +37,6 @@ export function PortfolioCarousel() {
 
   const scrollBy = (dir: number) => {
     if (!ref.current) return;
-    const w = ref.current.clientWidth;
     // Scroll smoothly exactly one card width + gap (approx 344px)
     ref.current.scrollBy({ left: dir * 344, behavior: "smooth" });
   };
@@ -61,11 +65,14 @@ export function PortfolioCarousel() {
         <div ref={ref} className="flex gap-6 overflow-x-auto pb-4 hide-scrollbar touch-pan-x" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
           {mockCases.map((c) => (
             <article key={c.title} className="group min-w-[320px] max-w-[320px] flex-shrink-0 rounded-[24px] border border-[#cdeeff] bg-[#f2fbff] p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-              <div className="h-44 w-full rounded-xl bg-gradient-to-br from-[#0b6fa8]/10 to-[#085c8b]/5 p-4 relative overflow-hidden border border-[#cdeeff]/50">
-                <div className="absolute inset-0 bg-white/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <div className="h-full w-full flex items-end">
-                  <div className="inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-[#0b6fa8] shadow-sm backdrop-blur">
-                    {c.role}
+              <div className="h-44 w-full rounded-xl bg-white p-2 relative overflow-hidden border border-[#cdeeff]/50 group-hover:border-[#cdeeff]">
+                <div className="relative h-full w-full rounded-lg overflow-hidden border border-zinc-100">
+                  <Image src={c.image} alt={c.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="absolute inset-0 h-full w-full flex items-end p-3 pointer-events-none">
+                    <div className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold text-[#0b6fa8] shadow-sm backdrop-blur">
+                      {c.role}
+                    </div>
                   </div>
                 </div>
               </div>

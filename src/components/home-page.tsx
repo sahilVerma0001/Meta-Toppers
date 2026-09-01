@@ -47,8 +47,8 @@ export function HomePage() {
       },
     );
 
-    const reveals = gsap.utils.toArray(".reveal");
-    reveals.forEach((element: any) => {
+    const reveals = gsap.utils.toArray<HTMLElement>(".reveal");
+    reveals.forEach((element) => {
       gsap.fromTo(
         element,
         { opacity: 0, y: 30 },

@@ -2,6 +2,7 @@
 
 import { CheckCircle, Phone, Clipboard, Rocket, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import type { ElementType } from "react";
 import { motion } from "framer-motion";
 
 const stepVariants = {
@@ -14,25 +15,25 @@ export function StepsSection() {
     {
       id: "01",
       title: "Free Strategy Call",
-      copy: "Tell us what's eating your time. We'll map how a website + growth system can free up 20+ hours a week.",
+      copy: "Tell us about your business and goals. We\u2019ll show you exactly how a new website and growth system can get you more clients.",
       icon: Phone,
     },
     {
       id: "02",
       title: "Custom Game Plan",
-      copy: "Within 24 hours you'll get a clear plan, timeline, and pricing — no surprise fees.",
+      copy: "Within 24 hours you\u2019ll get a clear plan, timeline, and fixed price. No surprises, no hidden fees.",
       icon: Clipboard,
     },
     {
       id: "03",
-      title: "We Hit the Ground Running",
-      copy: "Work begins fast: design, build, and test with visible progress from Day 1.",
+      title: "We Build It Fast",
+      copy: "Design and development begins immediately. You\u2019ll see real progress within the first week.",
       icon: Rocket,
     },
     {
       id: "04",
-      title: "You Focus on Growth",
-      copy: "We run the systems and report progress so you can focus on deals and scaling.",
+      title: "Launch & Grow",
+      copy: "We launch your site, turn on the campaigns, and track every metric. You focus on closing deals.",
       icon: CheckCircle,
     },
   ];
@@ -40,13 +41,13 @@ export function StepsSection() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-16">
       <div className="text-center">
-        <h2 className="text-3xl font-semibold text-zinc-950">From overwhelmed to in control — in 4 simple steps.</h2>
-        <p className="mt-4 max-w-2xl mx-auto text-zinc-600">No complicated onboarding. No endless meetings. Tell us what you need, and we make it happen.</p>
+        <h2 className="text-3xl font-semibold text-zinc-950">From first call to live website — in 4 simple steps.</h2>
+        <p className="mt-4 max-w-2xl mx-auto text-zinc-600">No complicated onboarding. No endless meetings. Here&apos;s exactly how working with us looks.</p>
       </div>
 
       <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {steps.map((s, i) => {
-          const Icon = s.icon as any;
+          const Icon = s.icon as ElementType;
           return (
             <motion.div
               key={s.id}

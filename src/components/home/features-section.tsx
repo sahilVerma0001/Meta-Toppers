@@ -6,12 +6,12 @@ export function FeaturesSection() {
       <div className="reveal rounded-[32px] border border-[#cdeeff] bg-white/85 p-6 shadow-[0_24px_80px_rgba(11,111,168,0.05)] backdrop-blur sm:p-8 lg:p-10">
         <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
-            <p className="text-sm font-medium tracking-[0.24em] text-[#0b6fa8] uppercase">Why founders choose us</p>
+            <p className="text-sm font-medium tracking-[0.24em] text-[#0b6fa8] uppercase">Why businesses choose us</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-zinc-950 sm:text-4xl">
-              We make growth feel clearer, sharper, and easier to act on.
+              We don&apos;t just build websites. We build revenue machines.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-8 text-zinc-600">
-              Our process combines strategy, storytelling, and execution so your company can present a stronger market position without losing momentum.
+              Every project starts with one question: how do we get you more clients? Then we design, build, and optimize until the answer is obvious.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">

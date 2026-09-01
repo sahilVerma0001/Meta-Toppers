@@ -8,11 +8,11 @@ export function ServicesSection() {
           <div>
             <p className="text-sm font-medium tracking-[0.24em] text-zinc-500 uppercase">What we do</p>
             <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-[-0.03em] text-zinc-950 sm:text-4xl">
-              Premium strategy, intelligent execution, and a clear growth narrative.
+              Three services. One goal: get you more clients.
             </h2>
           </div>
           <p className="max-w-xl text-base leading-7 text-zinc-600">
-            We don’t chase vanity metrics. We build brand systems and conversion journeys that create market confidence and predictable commercial momentum.
+            We don&apos;t do vanity metrics. Every website, every campaign, and every funnel we build is measured by one thing: did it bring you more paying clients?
           </p>
         </div>
 

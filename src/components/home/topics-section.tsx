@@ -6,13 +6,13 @@ export function TopicsSection() {
       <div className="reveal rounded-[32px] border border-zinc-200 bg-white/80 p-6 shadow-[0_24px_80px_rgba(17,24,39,0.05)] backdrop-blur sm:p-8 lg:p-10">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="text-sm font-medium tracking-[0.24em] text-zinc-500 uppercase">Built for every stage of growth</p>
+            <p className="text-sm font-medium tracking-[0.24em] text-zinc-500 uppercase">Everything you need to grow</p>
             <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-[-0.03em] text-zinc-950 sm:text-4xl">
-              Dedicated thinking for the topics that shape modern growth.
+              One agency. Every digital growth lever covered.
             </h2>
           </div>
           <p className="max-w-xl text-base leading-7 text-zinc-600">
-            From positioning and performance to portfolio storytelling and long-term brand trust, Meta Toppers helps business owners navigate every critical growth conversation.
+            From your website and SEO to paid campaigns and brand strategy — we handle the full picture so you can focus on running your business.
           </p>
         </div>
 

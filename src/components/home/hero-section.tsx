@@ -12,20 +12,20 @@ export function HeroSection() {
       >
         <div className="hero-copy mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-[#cdeeff] bg-[#f2fbff] px-3 py-2 text-sm text-[#0b6fa8] shadow-sm backdrop-blur">
           <ShieldCheck size={16} />
-          Trusted by founders scaling from $1M to $10M+
+          Trusted by 50+ businesses across 6 industries
         </div>
         <h1 className="hero-copy max-w-3xl text-5xl font-semibold leading-[0.95] tracking-[-0.04em] text-zinc-950 sm:text-6xl lg:text-7xl">
-          Premium Web Design & Digital Marketing for Ambitious Brands.
+          We Build Websites That Turn Visitors Into Clients.
         </h1>
         <p className="hero-copy mt-6 max-w-2xl text-lg leading-8 text-zinc-600 sm:text-xl">
-          We are a full-service digital agency specializing in high-performance websites, SEO, and targeted marketing campaigns that turn attention into revenue.
+          High-performance websites, SEO that actually ranks, and marketing campaigns that drive real revenue — not just traffic.
         </p>
         <div className="hero-copy mt-8 flex flex-col gap-4 sm:flex-row">
           <a
-            href="#contact"
+            href="/contact"
             className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#0b6fa8] px-8 py-4 text-[15px] font-semibold text-white shadow-[0_12px_36px_rgba(11,111,168,0.25)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#085c8b] hover:shadow-[0_20px_48px_rgba(11,111,168,0.3)]"
           >
-            Book a strategy call
+            Get a Free Growth Audit
             <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
           </a>
           <a
@@ -33,7 +33,7 @@ export function HeroSection() {
             className="group inline-flex items-center justify-center gap-2 rounded-full border border-[#cdeeff] bg-white/90 px-8 py-4 text-[15px] font-semibold text-zinc-800 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#0b6fa8] hover:bg-[#f2fbff] hover:shadow-[0_12px_32px_rgba(11,111,168,0.08)] hover:text-[#0b6fa8]"
           >
             <Play size={18} className="transition-transform duration-300 group-hover:scale-110 text-[#0b6fa8]" />
-            View our approach
+            See Our Results
           </a>
         </div>
       </motion.div>
@@ -55,8 +55,8 @@ export function HeroSection() {
             {/* Header */}
             <div className="flex items-start justify-between mb-8">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#0b6fa8]">Impact Engine</p>
-                <p className="mt-2 text-2xl font-bold tracking-tight text-zinc-950">Scale with precision</p>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#0b6fa8]">Client Results</p>
+                <p className="mt-2 text-2xl font-bold tracking-tight text-zinc-950">Average in 90 days</p>
               </div>
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-sm border border-[#cdeeff] text-[#0b6fa8]">
                 <Rocket size={20} />
@@ -68,17 +68,18 @@ export function HeroSection() {
               {/* Main Highlight Card */}
               <div className="col-span-1 sm:col-span-2 rounded-[24px] bg-[#0b6fa8] p-6 text-white shadow-md relative overflow-hidden">
                 <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/10 blur-2xl" />
-                <p className="text-xs font-semibold text-blue-100 uppercase tracking-widest">Qualified Demand</p>
+                <p className="text-xs font-semibold text-blue-100 uppercase tracking-widest">More Qualified Leads</p>
                 <p className="mt-2 text-5xl font-bold tracking-tight">+146%</p>
                 <div className="mt-6 flex items-center gap-2 text-xs font-semibold text-blue-100/80 border-t border-white/20 pt-4">
-                  <BarChart3 size={14} /> <span>Q3 Performance Tracking</span>
+                  <BarChart3 size={14} /> <span>Average client result in 90 days</span>
                 </div>
               </div>
 
               {/* Secondary Cards */}
               <div className="rounded-[20px] border border-[#cdeeff] bg-white p-5 shadow-sm">
-                <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Conversion</p>
+                <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Conversion Rate</p>
                 <p className="mt-1 text-3xl font-black text-zinc-900">8.4%</p>
+                <p className="mt-1 text-[11px] text-zinc-400">Industry avg: 2.5%</p>
               </div>
 
               <div className="rounded-[20px] border border-[#cdeeff] bg-white p-5 shadow-sm flex flex-col justify-center">
@@ -86,7 +87,7 @@ export function HeroSection() {
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f2fbff] text-[#0b6fa8]">
                     <ShieldCheck size={18} />
                   </div>
-                  <span className="text-sm font-bold leading-tight text-zinc-800">Trusted<br />Execution</span>
+                  <span className="text-sm font-bold leading-tight text-zinc-800">96% Client<br />Retention</span>
                 </div>
               </div>
             </div>
@@ -94,10 +95,10 @@ export function HeroSection() {
             {/* Feature Pills */}
             <div className="flex flex-wrap gap-2">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-[#cdeeff] bg-white px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-zinc-600 shadow-sm">
-                <Sparkles size={12} className="text-[#0b6fa8]" /> Refined storytelling
+                <Sparkles size={12} className="text-[#0b6fa8]" /> Custom-built websites
               </span>
               <span className="inline-flex items-center gap-1.5 rounded-full border border-[#cdeeff] bg-white px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-zinc-600 shadow-sm">
-                <BarChart3 size={12} className="text-[#0b6fa8]" /> Analytical rigor
+                <BarChart3 size={12} className="text-[#0b6fa8]" /> Revenue-driven SEO
               </span>
             </div>
 

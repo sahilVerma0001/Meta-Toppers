@@ -6,16 +6,16 @@ export function ApproachSection() {
     <section id="approach" className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-16">
       <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
         <div className="reveal rounded-[32px] border border-[#0b6fa8]/30 bg-gradient-to-br from-[#0b6fa8] to-[#085c8b] p-8 text-white shadow-[0_24px_80px_rgba(11,111,168,0.15)] sm:p-10">
-          <p className="text-sm font-medium tracking-[0.24em] text-blue-100 uppercase">Why it works</p>
+          <p className="text-sm font-medium tracking-[0.24em] text-blue-100 uppercase">Our process</p>
           <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">
-            The best agencies don’t just look polished. They create momentum.
+            We don&apos;t guess. We research, build, and optimize until the numbers prove it works.
           </h2>
           <p className="mt-5 text-base leading-8 text-blue-50">
-            Our work sits at the intersection of positioning, product storytelling, and digital experience design—so every interaction feels intentional and every message builds trust.
+            Every project follows a proven 3-step framework: research your market, build something that converts, then scale what&apos;s working. No fluff, no filler.
           </p>
           <div className="mt-7 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/15 px-3 py-2 text-sm text-blue-50">
             <MoveUpRight size={16} />
-            Built for teams that need clarity, speed, and conviction.
+            From strategy to results in 21 days.
           </div>
         </div>
 

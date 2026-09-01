@@ -22,17 +22,17 @@ const services = [
 
 const caseStudies = [
   {
-    metric: "+XX%",
+    metric: "+60%",
     label: "Increase in qualified lead volume",
-    description: "Rebuilt the digital acquisition funnel for a luxury brokerage, reducing cost-per-lead.",
+    description: "Rebuilt the digital acquisition funnel for a luxury brokerage, reducing cost-per-lead by 40%.",
   },
   {
-    metric: "XXk+",
+    metric: "85k+",
     label: "Monthly portal visitors",
     description: "Developed a custom property listing platform with advanced filtering and CRM integration.",
   },
   {
-    metric: "X.X%",
+    metric: "8.4%",
     label: "Website conversion rate",
     description: "Optimized landing pages for pre-construction developments to maximize early registrations.",
   },
@@ -52,10 +52,10 @@ export default function RealEstatePage() {
                 Back to Industries
               </Link>
               <h1 className="mt-2 text-4xl font-semibold tracking-[-0.03em] text-zinc-950 sm:text-5xl lg:text-6xl">
-                Digital Growth for Real Estate Innovators.
+                Get More Qualified Leads for Your Real Estate Business.
               </h1>
               <p className="mt-6 text-lg leading-8 text-zinc-600">
-                We build premium digital experiences and lead generation systems that help agencies, brokerages, and developers stand out and close more deals.
+                We build premium websites, property portals, and lead generation systems that help agencies, brokerages, and developers close more deals — faster.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-[#0b6fa8] px-6 py-3.5 text-sm font-medium text-white transition hover:bg-[#085c8b] shadow-[0_10px_30px_rgba(11,111,168,0.2)] hover:shadow-[0_16px_42px_rgba(11,111,168,0.24)] hover:-translate-y-0.5">
@@ -78,11 +78,11 @@ export default function RealEstatePage() {
               <div className="space-y-4">
                 <div className="rounded-2xl border border-[#cdeeff] bg-white p-4">
                   <p className="text-sm text-zinc-600">Average ROI on ad spend</p>
-                  <p className="mt-1 text-2xl font-semibold text-zinc-950">XXX%</p>
+                  <p className="mt-1 text-2xl font-semibold text-zinc-950">340%</p>
                 </div>
                 <div className="rounded-2xl bg-[#0b6fa8] p-4 text-white">
                   <p className="text-sm text-blue-100">Client retention rate</p>
-                  <p className="mt-1 text-2xl font-semibold text-white">XX%</p>
+                  <p className="mt-1 text-2xl font-semibold text-white">96%</p>
                 </div>
               </div>
             </div>
