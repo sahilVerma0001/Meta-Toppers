@@ -37,3 +37,231 @@ body {
   background: #0b6fa8;
   color: #f7fbff;
 }
+
+/* ========================================
+   HERO GRADIENT MESH BACKGROUND
+   ======================================== */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+}
+
+.hero-gradient-bg {
+  background: linear-gradient(
+    135deg,
+    rgba(11, 111, 168, 0.06) 0%,
+    rgba(8, 92, 139, 0.03) 25%,
+    rgba(205, 238, 255, 0.08) 50%,
+    rgba(11, 111, 168, 0.04) 75%,
+    rgba(242, 251, 255, 0.06) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease-in-out infinite;
+}
+
+/* ========================================
+   FLOATING PARTICLES
+   ======================================== */
+@keyframes float-particle {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translate(30px, -40px) scale(1.2);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-20px, -80px) scale(0.8);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translate(40px, -40px) scale(1.1);
+    opacity: 0.5;
+  }
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: #0b6fa8;
+  pointer-events: none;
+  animation: float-particle linear infinite;
+}
+
+/* ========================================
+   PULSING CTA GLOW
+   ======================================== */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 12px 36px rgba(11, 111, 168, 0.25);
+  }
+  50% {
+    box-shadow: 0 12px 48px rgba(11, 111, 168, 0.4), 0 0 20px rgba(11, 111, 168, 0.15);
+  }
+}
+
+.cta-pulse {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.cta-pulse:hover {
+  animation: none;
+  box-shadow: 0 20px 48px rgba(11, 111, 168, 0.3);
+}
+
+/* ========================================
+   INFINITE LOGO SCROLL
+   ======================================== */
+@keyframes scroll-logos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-scroll-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-logos 25s linear infinite;
+}
+
+.logo-scroll-track:hover {
+  animation-play-state: paused;
+}
+
+/* ========================================
+   MICRO-ANIMATION UTILITIES
+   ======================================== */
+
+/* Smooth card hover with subtle 3D tilt */
+.card-hover {
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.card-hover:hover {
+  transform: translateY(-4px) perspective(800px) rotateX(1deg);
+  box-shadow: 0 24px 60px rgba(11, 111, 168, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+/* Nav link animated underline */
+.nav-link-animated {
+  position: relative;
+}
+.nav-link-animated::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #0b6fa8;
+  transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.nav-link-animated:hover::after {
+  width: 100%;
+}
+
+/* Custom focus ring */
+*:focus-visible {
+  outline: 2px solid #0b6fa8;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Gradient border shimmer */
+@keyframes border-shimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #0b6fa8, #cdeeff, #0b6fa8, #cdeeff);
+  background-size: 300% 300%;
+  animation: border-shimmer 6s ease infinite;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+/* Button scale interaction */
+.btn-interactive {
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.btn-interactive:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+.btn-interactive:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Stagger reveal children (used with GSAP) */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Form input focus animation */
+.form-input-animated {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-input-animated:focus {
+  border-color: #0b6fa8;
+  box-shadow: 0 0 0 3px rgba(11, 111, 168, 0.1);
+}
+
+/* Success checkmark animation */
+@keyframes check-draw {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.check-animate {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: check-draw 0.6s ease-out 0.2s forwards;
+}
+
+/* Smooth page content enter */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main {
+  animation: page-enter 0.5s ease-out;
+}

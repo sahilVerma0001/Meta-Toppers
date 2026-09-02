@@ -3,14 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, type ReactNode } from "react";
+import { useState, useEffect, type ReactNode } from "react";
 import { Menu, X } from "lucide-react";
 import { SiteFooter } from "./site-footer";
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
-  { href: "/website", label: "Website" },
+  { href: "/website", label: "Our Work" },
   { href: "/about", label: "About" },
   { href: "/industries", label: "Industries" },
   { href: "/contact", label: "Contact" },
@@ -19,10 +19,33 @@ const navLinks = [
 export function SiteShell({ children }: { children: ReactNode }) {
   const pathname = usePathname() || "/";
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#f7fbff] text-zinc-900">
-      <header className="sticky top-0 z-40 border-b border-zinc-200/70 bg-[#f7fbff]/85 backdrop-blur-xl">
+      {/* Mobile Nav Backdrop */}
+      {isMobileMenuOpen && (
+        <div 
+          className="fixed inset-0 z-30 bg-zinc-950/20 backdrop-blur-sm md:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+
+      <header className={`sticky top-0 z-40 transition-all duration-300 ${
+        isMobileMenuOpen
+          ? "bg-white"
+          : scrolled 
+            ? "border-b border-zinc-200/70 bg-white/85 backdrop-blur-xl shadow-sm" 
+            : "border-b border-transparent bg-transparent"
+      }`}>
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
           <Link href="/" className="flex items-center gap-3">
             <Image
@@ -46,7 +69,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
                   key={link.href}
                   href={link.href}
                   aria-current={isActive ? "page" : undefined}
-                  className={`relative transition pb-1 border-b-2 ${isActive ? "text-[#0b6fa8] font-semibold border-[#0b6fa8]" : "text-zinc-600 hover:text-zinc-950 border-transparent"}`}
+                  className={`nav-link-animated relative transition-colors pb-1 ${isActive ? "text-[#0b6fa8] font-semibold" : "text-zinc-600 hover:text-zinc-950"}`}
                 >
                   {link.label}
                 </Link>
@@ -57,7 +80,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <div className="flex items-center gap-4">
             <Link
               href="/contact"
-              className="hidden sm:inline-flex rounded-full border border-zinc-300 bg-white/80 px-4 py-2 text-sm font-medium text-zinc-900 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+              className="btn-interactive hidden sm:inline-flex rounded-full border border-zinc-300 bg-white/80 px-4 py-2 text-sm font-medium text-zinc-900 shadow-sm"
             >
               Book a call
             </Link>
@@ -74,7 +97,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
         {/* Mobile Nav Overlay */}
         {isMobileMenuOpen && (
-          <div className="absolute left-0 top-full w-full border-b border-zinc-200/70 bg-white/95 px-6 py-6 shadow-xl backdrop-blur-xl md:hidden">
+          <div className="absolute left-0 top-full w-full border-t border-zinc-100 border-b border-zinc-200/70 bg-white px-6 py-6 shadow-xl md:hidden">
             <nav className="flex flex-col gap-5">
               {navLinks.map((link) => {
                 const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
@@ -103,29 +126,6 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
       {children}
 
-      <footer id="contact" className="mx-auto max-w-7xl px-6 pb-16 pt-8 lg:px-8">
-        {/* <div className="rounded-[32px] border border-[#cdeeff] bg-white p-8 shadow-[0_24px_80px_rgba(11,111,168,0.05)] sm:p-10"> */}
-        <div>
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <div>
-              <p className="text-sm font-medium tracking-[0.24em] text-[#0b6fa8] uppercase">Let&apos;s talk</p>
-              <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-[-0.03em] text-zinc-950 sm:text-4xl">
-                Ready to turn your website into your best salesperson?
-              </h2>
-              <p className="mt-4 max-w-xl text-base leading-7 text-zinc-600">
-                Book a free growth audit. We&apos;ll review your site, identify what&apos;s costing you leads, and show you exactly how to fix it.
-              </p>
-            </div>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-[#0b6fa8] px-5 py-3 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-[#085c8b]"
-            >
-              hello@metatoppers.com
-            </Link>
-          </div>
-        </div>
-      </footer>
-      
       <SiteFooter />
     </div>
   );

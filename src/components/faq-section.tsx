@@ -4,10 +4,10 @@ import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 
 const faqs = [
-  { q: "How long does a typical website project take?", a: "Most projects go from kickoff to launch in 3\u20134 weeks. Complex platforms with CRM integrations or custom portals typically take 6\u20138 weeks. We\u2019ll give you a clear timeline before we start." },
-  { q: "What industries do you work with?", a: "We work with Real Estate, SaaS, Fintech, Professional Services, and Consumer Brands. Our approach adapts to each industry\u2019s unique audience and conversion patterns." },
-  { q: "Do you offer ongoing support after launch?", a: "Yes \u2014 every project includes 30 days of post-launch support. We also offer monthly retainer plans for ongoing optimization, content updates, and performance marketing." },
-  { q: "How do you measure success?", a: "We track real business metrics: qualified leads generated, conversion rates, cost per acquisition, and revenue impact. You\u2019ll get a clear dashboard showing exactly what\u2019s working." },
+  { q: "Who is Meta Toppers best for?", a: "We work best with business owners who are already generating revenue and want to scale — Real Estate, SaaS, Fintech, Professional Services, and Consumer Brands. If you're pre-revenue or looking for the cheapest option, we're probably not the right fit." },
+  { q: "How fast can you launch?", a: "Most projects go live in 3–4 weeks. Complex platforms take 6–8 weeks. We guarantee launch within 21 days for standard projects — or we work free." },
+  { q: "What if it doesn't work?", a: "We track real business metrics: leads, conversion rates, cost per acquisition, and revenue impact. If we don't hit the targets we set together, we keep optimizing at no extra cost until we do." },
+  { q: "How is this different from hiring a freelancer?", a: "Freelancers give you a deliverable. We give you a system — strategy, design, development, SEO, and paid ads under one roof. One team, one vision, one point of accountability. No handoffs, no miscommunication." },
 ];
 
 export function FAQSection() {
@@ -18,12 +18,12 @@ export function FAQSection() {
       <div className="reveal rounded-[32px] border border-[#cdeeff] bg-white/80 p-6 shadow-[0_24px_80px_rgba(11,111,168,0.05)] backdrop-blur sm:p-8 lg:p-10">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
           <div className="lg:max-w-md">
-            <p className="text-sm font-medium tracking-[0.24em] text-[#0b6fa8] uppercase">FAQ</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-zinc-950 sm:text-4xl">
-              Got questions? We&apos;ve got answers.
+            <p className="text-sm font-bold tracking-[0.2em] text-[#0b6fa8] uppercase">Before you apply</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-zinc-950 sm:text-4xl">
+              Is Meta Toppers right for you?
             </h2>
             <p className="mt-4 text-base leading-7 text-zinc-600">
-              Still not sure? Book a free 15-minute call and we&apos;ll walk you through everything.
+              We're selective about who we work with. Here's how to know if we're a good fit.
             </p>
           </div>
           

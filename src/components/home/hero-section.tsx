@@ -1,110 +1,283 @@
+"use client";
+
 import { motion } from "framer-motion";
-import { ArrowRight, BarChart3, Play, Rocket, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, Play, ShieldCheck, TrendingUp } from "lucide-react";
+import { AnimatedCounter } from "../animated-counter";
+
+const particles = [
+  { size: 4, left: "10%", top: "20%", duration: 12, delay: 0 },
+  { size: 3, left: "25%", top: "60%", duration: 15, delay: 2 },
+  { size: 5, left: "45%", top: "15%", duration: 18, delay: 4 },
+  { size: 3, left: "65%", top: "70%", duration: 14, delay: 1 },
+  { size: 4, left: "80%", top: "30%", duration: 16, delay: 3 },
+  { size: 6, left: "90%", top: "55%", duration: 20, delay: 5 },
+  { size: 3, left: "15%", top: "80%", duration: 13, delay: 6 },
+  { size: 4, left: "55%", top: "45%", duration: 17, delay: 2 },
+];
+
+const textVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.12, delayChildren: 0.1 },
+  },
+};
+
+const lineVariant = {
+  hidden: { opacity: 0, y: 30, filter: "blur(4px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.7, ease: [0.23, 1, 0.32, 1] as const },
+  },
+};
 
 export function HeroSection() {
   return (
-    <section className="mx-auto grid max-w-7xl gap-10 px-6 pb-20 pt-4 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:pb-28 lg:pt-8">
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="flex flex-col justify-center"
-      >
-        <div className="hero-copy mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-[#cdeeff] bg-[#f2fbff] px-3 py-2 text-sm text-[#0b6fa8] shadow-sm backdrop-blur">
-          <ShieldCheck size={16} />
-          Trusted by 50+ businesses across 6 industries
-        </div>
-        <h1 className="hero-copy max-w-3xl text-5xl font-semibold leading-[0.95] tracking-[-0.04em] text-zinc-950 sm:text-6xl lg:text-7xl">
-          We Build Websites That Turn Visitors Into Clients.
-        </h1>
-        <p className="hero-copy mt-6 max-w-2xl text-lg leading-8 text-zinc-600 sm:text-xl">
-          High-performance websites, SEO that actually ranks, and marketing campaigns that drive real revenue — not just traffic.
-        </p>
-        <div className="hero-copy mt-8 flex flex-col gap-4 sm:flex-row">
-          <a
-            href="/contact"
-            className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#0b6fa8] px-8 py-4 text-[15px] font-semibold text-white shadow-[0_12px_36px_rgba(11,111,168,0.25)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#085c8b] hover:shadow-[0_20px_48px_rgba(11,111,168,0.3)]"
-          >
-            Get a Free Growth Audit
-            <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
-          <a
-            href="#results"
-            className="group inline-flex items-center justify-center gap-2 rounded-full border border-[#cdeeff] bg-white/90 px-8 py-4 text-[15px] font-semibold text-zinc-800 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#0b6fa8] hover:bg-[#f2fbff] hover:shadow-[0_12px_32px_rgba(11,111,168,0.08)] hover:text-[#0b6fa8]"
-          >
-            <Play size={18} className="transition-transform duration-300 group-hover:scale-110 text-[#0b6fa8]" />
-            See Our Results
-          </a>
-        </div>
-      </motion.div>
+    <section className="relative overflow-hidden">
+      {/* Animated gradient mesh background */}
+      <div className="hero-gradient-bg absolute inset-0 pointer-events-none" />
 
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.95, delay: 0.1, ease: "easeOut" }}
-        className="relative flex w-full h-fit flex-col justify-center lg:self-center pt-8 lg:pt-0"
-      >
-        {/* Soft Background Glow */}
-        <div className="absolute inset-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[320px] w-[320px] rounded-full bg-[#0b6fa8]/10 blur-[80px] pointer-events-none" />
+      {/* Floating particles */}
+      {particles.map((p, i) => (
+        <div
+          key={i}
+          className="particle"
+          style={{
+            width: p.size,
+            height: p.size,
+            left: p.left,
+            top: p.top,
+            animationDuration: `${p.duration}s`,
+            animationDelay: `${p.delay}s`,
+            opacity: 0.2,
+          }}
+        />
+      ))}
 
-        {/* Outer Glass Container */}
-        <div className="relative z-10 w-full max-w-[480px] mx-auto rounded-[32px] border border-zinc-200/60 bg-white/60 p-2 shadow-[0_32px_80px_rgba(11,111,168,0.06)] backdrop-blur-xl">
-          {/* Inner Content Area */}
-          <div className="rounded-[28px] border border-[#cdeeff] bg-[#f7fbff] p-5 sm:p-7">
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-6 pb-12 pt-8 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:pb-16 lg:pt-14">
+        {/* Left — Copy */}
+        <motion.div
+          variants={textVariants}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col justify-center"
+        >
+          <motion.div variants={lineVariant} className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-red-200 bg-red-50/80 px-4 py-2.5 text-sm text-red-600 shadow-sm backdrop-blur-sm">
+            <ShieldCheck size={16} />
+            97% of business websites convert under 2%. Is yours one of them?
+          </motion.div>
 
-            {/* Header */}
-            <div className="flex items-start justify-between mb-8">
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#0b6fa8]">Client Results</p>
-                <p className="mt-2 text-2xl font-bold tracking-tight text-zinc-950">Average in 90 days</p>
-              </div>
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-sm border border-[#cdeeff] text-[#0b6fa8]">
-                <Rocket size={20} />
-              </div>
-            </div>
+          <motion.h1 variants={lineVariant} className="max-w-3xl text-5xl font-bold leading-[0.95] tracking-[-0.04em] text-zinc-950 sm:text-6xl lg:text-7xl">
+            Your Website Is Losing You Clients.
+            <span className="text-[#0b6fa8]"> Every. Single. Day.</span>
+          </motion.h1>
 
-            {/* Bento Grid */}
-            <div className="grid gap-3 sm:grid-cols-2 mb-3">
-              {/* Main Highlight Card */}
-              <div className="col-span-1 sm:col-span-2 rounded-[24px] bg-[#0b6fa8] p-6 text-white shadow-md relative overflow-hidden">
-                <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/10 blur-2xl" />
-                <p className="text-xs font-semibold text-blue-100 uppercase tracking-widest">More Qualified Leads</p>
-                <p className="mt-2 text-5xl font-bold tracking-tight">+146%</p>
-                <div className="mt-6 flex items-center gap-2 text-xs font-semibold text-blue-100/80 border-t border-white/20 pt-4">
-                  <BarChart3 size={14} /> <span>Average client result in 90 days</span>
+          <motion.p variants={lineVariant} className="mt-6 max-w-2xl text-lg leading-8 text-zinc-600 sm:text-xl">
+            Most businesses bleed money through a website that looks fine but converts nobody. We build systems that turn <span className="font-semibold text-zinc-900">2% conversion into 8–12%</span> — on autopilot.
+          </motion.p>
+
+          <motion.div variants={lineVariant} className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <a
+              href="#apply"
+              className="cta-pulse btn-interactive group inline-flex items-center justify-center gap-2 rounded-full bg-[#0b6fa8] px-8 py-4 text-[15px] font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#085c8b]"
+            >
+              Apply for a Free Audit
+              <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
+            <a
+              href="#results"
+              className="btn-interactive group inline-flex items-center justify-center gap-2 rounded-full border border-[#cdeeff] bg-white/90 px-8 py-4 text-[15px] font-semibold text-zinc-800 backdrop-blur-sm transition-all duration-300 hover:border-[#0b6fa8] hover:bg-[#f2fbff] hover:text-[#0b6fa8]"
+            >
+              <Play size={18} className="transition-transform duration-300 group-hover:scale-110 text-[#0b6fa8]" />
+              See the Proof
+            </a>
+          </motion.div>
+        </motion.div>
+
+        {/* Right — Dashboard + Testimonial */}
+        <motion.div
+          initial={{ opacity: 0, y: 30, scale: 0.97 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.3, ease: [0.23, 1, 0.32, 1] }}
+          className="relative flex w-full h-fit flex-col justify-center lg:self-center pt-8 lg:pt-0 gap-4"
+        >
+          {/* Soft Background Glow */}
+          <div className="absolute inset-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[360px] w-[360px] rounded-full bg-[#0b6fa8]/8 blur-[100px] pointer-events-none" />
+
+          {/* Dashboard Card */}
+          <div className="gradient-border relative z-10 w-full max-w-[500px] mx-auto rounded-[32px] bg-white/60 p-2 shadow-[0_32px_80px_rgba(11,111,168,0.08)] backdrop-blur-xl">
+            <div className="rounded-[28px] border border-[#cdeeff]/60 bg-[#f7fbff] p-5 sm:p-6">
+
+              {/* Dashboard Header */}
+              <div className="flex items-center justify-between mb-5">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#0b6fa8]">Performance Snapshot</p>
+                  <p className="mt-1 text-lg font-bold tracking-tight text-zinc-950">Last 6 Months</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-bold text-emerald-600">
+                    <TrendingUp size={12} /> +146%
+                  </span>
                 </div>
               </div>
 
-              {/* Secondary Cards */}
-              <div className="rounded-[20px] border border-[#cdeeff] bg-white p-5 shadow-sm">
-                <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Conversion Rate</p>
-                <p className="mt-1 text-3xl font-black text-zinc-900">8.4%</p>
-                <p className="mt-1 text-[11px] text-zinc-400">Industry avg: 2.5%</p>
-              </div>
+              {/* Animated Growth Chart (SVG) */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="mb-5"
+              >
+                <svg viewBox="0 0 400 140" className="w-full h-auto" fill="none">
+                  {/* Grid lines */}
+                  <line x1="40" y1="20" x2="380" y2="20" stroke="#e8f5ff" strokeWidth="1" />
+                  <line x1="40" y1="50" x2="380" y2="50" stroke="#e8f5ff" strokeWidth="1" />
+                  <line x1="40" y1="80" x2="380" y2="80" stroke="#e8f5ff" strokeWidth="1" />
+                  <line x1="40" y1="110" x2="380" y2="110" stroke="#e8f5ff" strokeWidth="1" />
 
-              <div className="rounded-[20px] border border-[#cdeeff] bg-white p-5 shadow-sm flex flex-col justify-center">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f2fbff] text-[#0b6fa8]">
-                    <ShieldCheck size={18} />
+                  {/* Y-axis labels */}
+                  <text x="8" y="24" fontSize="9" fill="#a1a1aa" fontWeight="500">40</text>
+                  <text x="8" y="54" fontSize="9" fill="#a1a1aa" fontWeight="500">30</text>
+                  <text x="8" y="84" fontSize="9" fill="#a1a1aa" fontWeight="500">20</text>
+                  <text x="8" y="114" fontSize="9" fill="#a1a1aa" fontWeight="500">10</text>
+
+                  {/* Gradient fill under chart */}
+                  <defs>
+                    <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#0b6fa8" stopOpacity="0.15" />
+                      <stop offset="100%" stopColor="#0b6fa8" stopOpacity="0.01" />
+                    </linearGradient>
+                  </defs>
+                  <motion.path
+                    d="M60,100 L120,90 L180,85 L240,60 L300,40 L360,22 L360,110 L60,110 Z"
+                    fill="url(#chartGradient)"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1, delay: 0.8 }}
+                  />
+
+                  {/* Chart line */}
+                  <motion.path
+                    d="M60,100 L120,90 L180,85 L240,60 L300,40 L360,22"
+                    stroke="#0b6fa8"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ duration: 1.5, delay: 0.6, ease: "easeOut" }}
+                  />
+
+                  {/* Data points */}
+                  {[
+                    { cx: 60, cy: 100, label: "12" },
+                    { cx: 120, cy: 90, label: "16" },
+                    { cx: 180, cy: 85, label: "18" },
+                    { cx: 240, cy: 60, label: "28" },
+                    { cx: 300, cy: 40, label: "35" },
+                    { cx: 360, cy: 22, label: "42" },
+                  ].map((point, i) => (
+                    <motion.g key={i}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.3, delay: 0.8 + i * 0.15 }}
+                    >
+                      <circle cx={point.cx} cy={point.cy} r="4" fill="#0b6fa8" stroke="white" strokeWidth="2" />
+                      {i === 5 && (
+                        <g>
+                          <rect x={point.cx - 18} y={point.cy - 22} width="36" height="16" rx="4" fill="#0b6fa8" />
+                          <text x={point.cx} y={point.cy - 11} fontSize="9" fill="white" textAnchor="middle" fontWeight="700">{point.label}</text>
+                        </g>
+                      )}
+                    </motion.g>
+                  ))}
+
+                  {/* X-axis labels */}
+                  <text x="60" y="128" fontSize="9" fill="#a1a1aa" textAnchor="middle" fontWeight="500">Jan</text>
+                  <text x="120" y="128" fontSize="9" fill="#a1a1aa" textAnchor="middle" fontWeight="500">Feb</text>
+                  <text x="180" y="128" fontSize="9" fill="#a1a1aa" textAnchor="middle" fontWeight="500">Mar</text>
+                  <text x="240" y="128" fontSize="9" fill="#a1a1aa" textAnchor="middle" fontWeight="500">Apr</text>
+                  <text x="300" y="128" fontSize="9" fill="#a1a1aa" textAnchor="middle" fontWeight="500">May</text>
+                  <text x="360" y="128" fontSize="9" fill="#a1a1aa" textAnchor="middle" fontWeight="500">Jun</text>
+                </svg>
+              </motion.div>
+
+              {/* Before / After Stats */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 1.2 }}
+                className="grid grid-cols-3 gap-3"
+              >
+                <div className="rounded-[16px] border border-zinc-200 bg-white p-3.5">
+                  <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Before</p>
+                  <p className="mt-1 text-xl font-black text-zinc-400">12</p>
+                  <p className="text-[10px] text-zinc-400">leads/week</p>
+                </div>
+                <div className="rounded-[16px] border border-[#cdeeff] bg-[#f2fbff] p-3.5">
+                  <p className="text-[10px] font-bold text-[#0b6fa8] uppercase tracking-wider flex items-center gap-1">After <TrendingUp size={10} /></p>
+                  <p className="mt-1 text-xl font-black text-[#0b6fa8]">
+                    <AnimatedCounter end={42} duration={2} />
+                  </p>
+                  <p className="text-[10px] text-[#0b6fa8]/70">leads/week</p>
+                </div>
+                <div className="rounded-[16px] bg-gradient-to-br from-[#0b6fa8] to-[#085c8b] p-3.5 text-white flex flex-col items-center justify-center">
+                  {/* Circular progress ring */}
+                  <div className="relative h-10 w-10 mb-1">
+                    <svg viewBox="0 0 48 48" className="absolute inset-0 h-full w-full">
+                      <circle cx="24" cy="24" r="18" fill="none" stroke="white" strokeWidth="3" opacity="0.15" />
+                      <motion.circle
+                        cx="24" cy="24" r="18"
+                        fill="none" stroke="white" strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeDasharray={`${2 * Math.PI * 18}`}
+                        strokeDashoffset={`${2 * Math.PI * 18 * (1 - 0.084)}`}
+                        transform="rotate(-90 24 24)"
+                        initial={{ strokeDashoffset: 2 * Math.PI * 18 }}
+                        animate={{ strokeDashoffset: 2 * Math.PI * 18 * (1 - 0.084) }}
+                        transition={{ duration: 1.5, delay: 1 }}
+                      />
+                    </svg>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <AnimatedCounter end={8.4} suffix="%" decimals={1} duration={1.5} className="text-[10px] font-extrabold text-white" />
+                    </div>
                   </div>
-                  <span className="text-sm font-bold leading-tight text-zinc-800">96% Client<br />Retention</span>
+                  <p className="text-[9px] font-semibold text-blue-100 uppercase tracking-wider">Conv. Rate</p>
                 </div>
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Mini Testimonial Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.4 }}
+            className="relative z-10 w-full max-w-[500px] mx-auto rounded-[20px] border border-[#cdeeff] bg-white/90 p-5 shadow-sm backdrop-blur-sm"
+          >
+            <div className="flex items-start gap-4">
+              {/* Avatar placeholder */}
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#0b6fa8] to-[#085c8b] text-white text-sm font-bold">
+                SJ
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-1 mb-1">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} viewBox="0 0 20 20" className="h-3.5 w-3.5 fill-amber-400">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-[13px] text-zinc-700 leading-snug">
+                  &ldquo;They took us from 12 leads/week to 42. The ROI paid for the entire project in the first month.&rdquo;
+                </p>
+                <p className="mt-2 text-[11px] font-semibold text-zinc-500">Sarah Jenkins &middot; VP Marketing, Elevate Realty</p>
               </div>
             </div>
-
-            {/* Feature Pills */}
-            <div className="flex flex-wrap gap-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[#cdeeff] bg-white px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-zinc-600 shadow-sm">
-                <Sparkles size={12} className="text-[#0b6fa8]" /> Custom-built websites
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[#cdeeff] bg-white px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-zinc-600 shadow-sm">
-                <BarChart3 size={12} className="text-[#0b6fa8]" /> Revenue-driven SEO
-              </span>
-            </div>
-
-          </div>
-        </div>
-      </motion.div>
+          </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 }

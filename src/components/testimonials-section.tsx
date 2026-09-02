@@ -43,7 +43,7 @@ export function TestimonialsSection() {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <p className="text-sm font-medium tracking-[0.24em] text-[#0b6fa8] uppercase">What our clients say</p>
+        <p className="text-sm font-bold tracking-[0.2em] text-[#0b6fa8] uppercase">Leaders who stopped settling</p>
         
         <div className="mx-auto mt-6 flex max-w-3xl flex-col items-center min-h-[220px] sm:min-h-[200px] justify-center">
           <div className="mb-4 text-[#0b6fa8]/30">
