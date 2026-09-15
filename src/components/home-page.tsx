@@ -35,18 +35,6 @@ export function HomePage() {
 
     frame = requestAnimationFrame(raf);
 
-    gsap.fromTo(
-      ".hero-copy",
-      { opacity: 0, y: 24 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out",
-        stagger: 0.08,
-      },
-    );
-
     const reveals = gsap.utils.toArray<HTMLElement>(".reveal");
     reveals.forEach((element) => {
       gsap.fromTo(

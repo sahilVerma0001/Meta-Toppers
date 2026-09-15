@@ -179,7 +179,7 @@ export default function PortfolioPage() {
                   <div className="rounded-[24px] border border-zinc-200 bg-white p-3 shadow-sm">
                     <p className="text-xs font-bold text-zinc-400 uppercase tracking-wider text-center mb-3">System Screenshot</p>
                     <div className="relative h-48 w-full overflow-hidden rounded-xl border border-zinc-100">
-                      <Image src={story.image} alt={story.client} fill className="object-cover" />
+                      <Image src={story.image} alt={story.client} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
                     </div>
                   </div>
 

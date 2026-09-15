@@ -67,7 +67,7 @@ export function PortfolioCarousel() {
             <article key={c.title} className="group min-w-[320px] max-w-[320px] flex-shrink-0 rounded-[24px] border border-[#cdeeff] bg-[#f2fbff] p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
               <div className="h-44 w-full rounded-xl bg-white p-2 relative overflow-hidden border border-[#cdeeff]/50 group-hover:border-[#cdeeff]">
                 <div className="relative h-full w-full rounded-lg overflow-hidden border border-zinc-100">
-                  <Image src={c.image} alt={c.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <Image src={c.image} alt={c.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   <div className="absolute inset-0 h-full w-full flex items-end p-3 pointer-events-none">
                     <div className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold text-[#0b6fa8] shadow-sm backdrop-blur">

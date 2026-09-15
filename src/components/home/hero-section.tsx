@@ -28,12 +28,13 @@ const textVariants = {
 };
 
 const lineVariant = {
-  hidden: { opacity: 0, y: 30, filter: "blur(4px)" },
+  // To avoid Lighthouse LCP penalties, critical text must render visibly on first paint
+  hidden: { opacity: 0.99, y: 15, filter: "blur(0px)" },
   visible: {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { duration: 0.7, ease: [0.23, 1, 0.32, 1] as const },
+    transition: { duration: 0.4, ease: "easeOut" },
   },
 };
 
