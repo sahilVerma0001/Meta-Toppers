@@ -64,16 +64,16 @@ export default function ServicesPage() {
       <main>
         {/* Hero */}
         <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-16">
-          <div className="rounded-[32px] border border-[#cdeeff] bg-white p-8 shadow-[0_24px_80px_rgba(11,111,168,0.05)] sm:p-10 lg:p-14">
-            <div className="max-w-3xl">
+          <div className="rounded-[32px] border border-[#cdeeff] bg-white p-8 shadow-[0_24px_80px_rgba(11,111,168,0.05)] sm:p-10 lg:p-14 text-center">
+            <div className="max-w-3xl mx-auto flex flex-col items-center">
               <p className="text-sm font-bold tracking-[0.2em] text-[#0b6fa8] uppercase">Our Services</p>
               <h1 className="mt-4 text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl lg:text-6xl">
                 Stop guessing.<br />Start growing.
               </h1>
-              <p className="mt-6 text-lg leading-8 text-zinc-600 max-w-2xl">
+              <p className="mt-6 text-lg leading-8 text-zinc-600 max-w-2xl text-center">
                 Three integrated engines that work together to turn your digital presence from a cost center into a revenue machine. No fluff. No vanity metrics. Just clients.
               </p>
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center w-full">
                 <Link href="#apply" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0b6fa8] px-8 py-4 text-[15px] font-semibold text-white transition-all hover:-translate-y-1 hover:bg-[#085c8b]">
                   Apply for a Free Audit
                   <ArrowRight size={18} />

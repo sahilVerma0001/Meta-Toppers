@@ -3,6 +3,11 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play, ShieldCheck, TrendingUp } from "lucide-react";
 import { AnimatedCounter } from "../animated-counter";
+import type { SVGProps } from "react";
+
+function WhatsApp(props: SVGProps<SVGSVGElement>) {
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>;
+}
 
 const particles = [
   { size: 4, left: "10%", top: "20%", duration: 12, delay: 0 },
@@ -69,8 +74,8 @@ export function HeroSection() {
           </motion.div>
 
           <motion.h1 variants={lineVariant} className="max-w-3xl text-5xl font-bold leading-[0.95] tracking-[-0.04em] text-zinc-950 sm:text-6xl lg:text-7xl">
-            Your Website Is Losing You Clients.
-            <span className="text-[#0b6fa8]"> Every. Single. Day.</span>
+            Your Website Is Losing Your Clients.
+            <div className="text-[#0b6fa8]"> Every. Single. Day.</div>
           </motion.h1>
 
           <motion.p variants={lineVariant} className="mt-6 max-w-2xl text-lg leading-8 text-zinc-600 sm:text-xl">
@@ -86,11 +91,13 @@ export function HeroSection() {
               <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>
             <a
-              href="#results"
-              className="btn-interactive group inline-flex items-center justify-center gap-2 rounded-full border border-[#cdeeff] bg-white/90 px-8 py-4 text-[15px] font-semibold text-zinc-800 backdrop-blur-sm transition-all duration-300 hover:border-[#0b6fa8] hover:bg-[#f2fbff] hover:text-[#0b6fa8]"
+              href="https://wa.me/919351673834"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-interactive group inline-flex items-center justify-center gap-2 rounded-full border border-[#cdeeff] bg-white/90 px-8 py-4 text-[15px] font-semibold text-zinc-800 backdrop-blur-sm transition-all duration-300 hover:border-[#25D366] hover:bg-[#25D366]/10 hover:text-[#25D366]"
             >
-              <Play size={18} className="transition-transform duration-300 group-hover:scale-110 text-[#0b6fa8]" />
-              See the Proof
+              <WhatsApp className="h-[18px] w-[18px] transition-transform duration-300 group-hover:scale-110 text-[#25D366]" />
+              Let&apos;s Talk
             </a>
           </motion.div>
         </motion.div>
@@ -259,7 +266,7 @@ export function HeroSection() {
             <div className="flex items-start gap-4">
               {/* Avatar placeholder */}
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#0b6fa8] to-[#085c8b] text-white text-sm font-bold">
-                SJ
+                VS
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-1 mb-1">
@@ -272,7 +279,7 @@ export function HeroSection() {
                 <p className="text-[13px] text-zinc-700 leading-snug">
                   &ldquo;They took us from 12 leads/week to 42. The ROI paid for the entire project in the first month.&rdquo;
                 </p>
-                <p className="mt-2 text-[11px] font-semibold text-zinc-500">Sarah Jenkins &middot; VP Marketing, Elevate Realty</p>
+                <p className="mt-2 text-[11px] font-semibold text-zinc-500">Vikram Singh &middot; Founder, Elevate Realty</p>
               </div>
             </div>
           </motion.div>

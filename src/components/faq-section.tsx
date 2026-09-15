@@ -4,10 +4,11 @@ import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 
 const faqs = [
-  { q: "Who is Meta Toppers best for?", a: "We work best with business owners who are already generating revenue and want to scale — Real Estate, SaaS, Fintech, Professional Services, and Consumer Brands. If you're pre-revenue or looking for the cheapest option, we're probably not the right fit." },
-  { q: "How fast can you launch?", a: "Most projects go live in 3–4 weeks. Complex platforms take 6–8 weeks. We guarantee launch within 21 days for standard projects — or we work free." },
-  { q: "What if it doesn't work?", a: "We track real business metrics: leads, conversion rates, cost per acquisition, and revenue impact. If we don't hit the targets we set together, we keep optimizing at no extra cost until we do." },
-  { q: "How is this different from hiring a freelancer?", a: "Freelancers give you a deliverable. We give you a system — strategy, design, development, SEO, and paid ads under one roof. One team, one vision, one point of accountability. No handoffs, no miscommunication." },
+  { q: "I've been burned by agencies before. How are you different?", a: "We get it — most agencies overpromise and underdeliver. That's exactly why we offer a guarantee: live in 21 days or we work free. No retainers that lock you in, no vague timelines. You see real metrics (leads, revenue, conversion rates) — not just pretty reports." },
+  { q: "Honestly, can I afford this right now?", a: "If your business is already generating revenue, you can't afford NOT to fix a broken digital presence. Every month you wait, you're losing clients to competitors who showed up first on Google. We offer flexible payment structures, and most clients see ROI within the first 30 days." },
+  { q: "Will this actually work for my specific industry?", a: "We've built growth systems for real estate firms, dental clinics, cafes, and insurance advisors — each with completely different audiences and buying cycles. We don't copy-paste. Every system is custom-built for your market, your audience, and your revenue goals." },
+  { q: "I don't have time for a long, complicated project.", a: "Neither do we. Most projects launch in 3–4 weeks. You won't be dragged into endless meetings or approval loops. We handle strategy, design, development, and marketing — you just review and approve. That's it." },
+  { q: "What if I want to stop or change direction midway?", a: "No lock-in contracts. No exit fees. If at any point you feel this isn't working, you can walk away. But honestly? 96% of our clients stay beyond year one — because the system keeps delivering results month after month." },
 ];
 
 export function FAQSection() {

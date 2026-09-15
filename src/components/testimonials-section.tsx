@@ -7,18 +7,23 @@ import { motion, AnimatePresence } from "framer-motion";
 const testimonials = [
   {
     quote: "Meta Toppers didn&apos;t just build us a website — they built us a lead machine. We went from 5 inquiries a week to over 30. The ROI paid for the project in the first month.",
-    name: "Sarah Jenkins",
-    role: "VP of Marketing, Elevate Luxury Realty",
+    name: "Vikram Rathore",
+    role: "Founder, Elevate Luxury Realty — Jaipur",
   },
   {
-    quote: "Their SEO strategy took us from page 3 to the top 3 results in our market. We&apos;re now getting organic leads every single day without spending a dollar on ads.",
-    name: "Marcus Chen",
-    role: "Founder, Chen & Associates",
+    quote: "Patients now come in already trusting us because of how professional our online presence looks. We had to hire a new associate doctor within 3 months to handle the overflow.",
+    name: "Dr. Neha Sharma",
+    role: "Director, SmileCare Dental Clinic — Jaipur",
   },
   {
-    quote: "The landing pages they built for our new development sold out Phase 1 in record time. We&apos;ve never seen conversion rates like this. Truly exceptional work.",
-    name: "David Ross",
-    role: "Director of Sales, Paramount Developments",
+    quote: "We shifted 40% of our orders from Swiggy and Zomato to direct. That alone saved us ₹1.8 lakhs in monthly commissions. The afternoon slump is completely gone.",
+    name: "Arjun Mehra",
+    role: "Owner, The Daily Grind Café — Jaipur",
+  },
+  {
+    quote: "My advisors actually enjoy coming to work now because they talk to people who asked us to call. No more cold calling. It&apos;s a completely different business.",
+    name: "Rahul Joshi",
+    role: "CEO, SecureLife Insurance Advisors",
   },
 ];
 

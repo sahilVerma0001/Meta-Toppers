@@ -8,27 +8,27 @@ import { ArrowLeft, ArrowRight, MoveUpRight } from "lucide-react";
 const mockCases = [
   {
     title: "Elevate Luxury Realty",
-    summary: "Built a custom property portal that increased high-net-worth lead volume by 60% in 8 weeks.",
-    role: "Website & Lead Gen",
+    summary: "Built a custom luxury property portal that generated ₹12 Cr in new pipeline in just 120 days.",
+    role: "Real Estate",
     image: "/images/luxury-realty.jpg",
   },
   {
-    title: "Paramount Developments",
-    summary: "Designed landing pages that sold out Phase 1 of a $50M development in record time.",
-    role: "Landing Pages & SEO",
-    image: "/images/development-landing.jpg",
+    title: "SmileCare Dental",
+    summary: "Redesigned web presence and local SEO, driving a 3× increase in high-ticket implant bookings.",
+    role: "Healthcare & Clinics",
+    image: "/images/dental-mockup.jpg",
   },
   {
-    title: "Chen & Associates",
-    summary: "Redesigned their website and local SEO — doubled organic seller leads within 90 days.",
-    role: "Website & SEO",
-    image: "/images/seo-dashboard.jpg",
+    title: "The Daily Grind",
+    summary: "Built a direct-ordering web app that bypassed delivery platforms and saved ₹1.8L monthly.",
+    role: "Cafes & Hospitality",
+    image: "/images/cafe-dashboard.jpg",
   },
   {
-    title: "Skyline Brokerage",
-    summary: "Full MLS/IDX integration and CRM setup that cut agent response time by 70%.",
-    role: "Platform Integration",
-    image: "/images/brokerage-crm.jpg",
+    title: "SecureLife Advisors",
+    summary: "Launched a term insurance calculator lead magnet, generating exclusive leads at ₹150 each.",
+    role: "Insurance & Finance",
+    image: "/images/insurance-dashboard.jpg",
   }
 ];
 

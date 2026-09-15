@@ -8,8 +8,8 @@ export function CTASection() {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
-    website: "",
-    revenue: "",
+    phone: "",
+    business: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -62,43 +62,44 @@ export function CTASection() {
                 {/* Right — Application Form */}
                 <form onSubmit={handleSubmit} className="rounded-[24px] bg-white/10 backdrop-blur-md border border-white/15 p-6 sm:p-8 space-y-5">
                   <div>
-                    <label htmlFor="cta-name" className="block text-sm font-semibold text-blue-100 mb-2">Your Name</label>
+                    <label htmlFor="cta-name" className="block text-sm font-semibold text-blue-100 mb-2">What&apos;s your name?</label>
                     <input
                       id="cta-name"
                       type="text"
                       required
-                      placeholder="John Smith"
+                      placeholder="e.g. Rahul Sharma"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-blue-200/50 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent transition-all"
                     />
                   </div>
                   <div>
-                    <label htmlFor="cta-website" className="block text-sm font-semibold text-blue-100 mb-2">Your Website URL</label>
+                    <label htmlFor="cta-phone" className="block text-sm font-semibold text-blue-100 mb-2">Best number to reach you?</label>
                     <input
-                      id="cta-website"
-                      type="url"
+                      id="cta-phone"
+                      type="tel"
                       required
-                      placeholder="https://yourwebsite.com"
-                      value={formData.website}
-                      onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                      placeholder="e.g. 98765 43210"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-blue-200/50 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent transition-all"
                     />
                   </div>
                   <div>
-                    <label htmlFor="cta-revenue" className="block text-sm font-semibold text-blue-100 mb-2">Monthly Revenue Range</label>
+                    <label htmlFor="cta-business" className="block text-sm font-semibold text-blue-100 mb-2">What does your business do?</label>
                     <select
-                      id="cta-revenue"
+                      id="cta-business"
                       required
-                      value={formData.revenue}
-                      onChange={(e) => setFormData({ ...formData, revenue: e.target.value })}
+                      value={formData.business}
+                      onChange={(e) => setFormData({ ...formData, business: e.target.value })}
                       className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent transition-all appearance-none"
                     >
-                      <option value="" disabled className="bg-[#085c8b]">Select range</option>
-                      <option value="under-10k" className="bg-[#085c8b]">Under $10K/mo</option>
-                      <option value="10k-50k" className="bg-[#085c8b]">$10K – $50K/mo</option>
-                      <option value="50k-250k" className="bg-[#085c8b]">$50K – $250K/mo</option>
-                      <option value="250k-plus" className="bg-[#085c8b]">$250K+/mo</option>
+                      <option value="" disabled className="bg-[#085c8b]">Select your industry</option>
+                      <option value="real-estate" className="bg-[#085c8b]">Real Estate</option>
+                      <option value="healthcare" className="bg-[#085c8b]">Healthcare / Clinic</option>
+                      <option value="hospitality" className="bg-[#085c8b]">Cafe / Restaurant / Hotel</option>
+                      <option value="insurance" className="bg-[#085c8b]">Insurance / Finance</option>
+                      <option value="other" className="bg-[#085c8b]">Other</option>
                     </select>
                   </div>
                   <button
@@ -106,11 +107,11 @@ export function CTASection() {
                     className="w-full group inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-4 text-[15px] font-bold text-[#0b6fa8] transition-all duration-300 hover:bg-blue-50 hover:shadow-lg hover:-translate-y-0.5"
                   >
                     <Send size={18} />
-                    Apply Now — It&apos;s Free
+                    Get My Free Audit
                     <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
                   </button>
                   <p className="text-center text-xs text-blue-200/60">
-                    Limited spots available. We review every application within 24 hours.
+                    Takes 10 seconds. We&apos;ll call you within 24 hours.
                   </p>
                 </form>
               </div>

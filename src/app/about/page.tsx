@@ -12,10 +12,9 @@ const stats = [
 ];
 
 const team = [
-  { name: "Arjun Mehta", role: "Founder & Strategy Lead", initials: "AM", color: "from-[#0b6fa8] to-[#085c8b]" },
-  { name: "Priya Sharma", role: "Lead Designer", initials: "PS", color: "from-violet-600 to-violet-700" },
-  { name: "Rahul Verma", role: "Full-Stack Developer", initials: "RV", color: "from-emerald-600 to-emerald-700" },
-  { name: "Sneha Patel", role: "SEO & Marketing Lead", initials: "SP", color: "from-amber-600 to-amber-700" },
+  { name: "Kartik Sharma", role: "Founder & Strategy Lead", initials: "KS", color: "from-[#0b6fa8] to-[#085c8b]" },
+  { name: "Sahil Parjapat", role: "SEO & Marketing Lead", initials: "SP", color: "from-violet-600 to-violet-700" },
+  { name: "Khushi Nama", role: "Full-Stack Developer", initials: "KN", color: "from-emerald-600 to-emerald-700" },
 ];
 
 const values = [
@@ -95,7 +94,7 @@ export default function AboutPage() {
                 No layers of account managers. You work directly with the people who build your growth engine.
               </p>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-3 max-w-4xl mx-auto">
               {team.map((member) => (
                 <div key={member.name} className="card-hover group flex flex-col items-center text-center rounded-[24px] border border-[#cdeeff] bg-white p-6 transition-all hover:shadow-md">
                   <div className={`flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br ${member.color} text-white text-xl font-bold mb-4 transition-transform duration-300 group-hover:scale-110`}>

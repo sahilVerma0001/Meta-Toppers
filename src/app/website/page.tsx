@@ -28,7 +28,7 @@ const stories = [
     client: "SmileCare Dental",
     industry: "Healthcare & Clinics",
     timeline: "Month 1 to Month 6",
-    image: "/images/development-landing.jpg", 
+    image: "/images/dental-mockup.jpg", 
     situation: "Dr. Sharma's clinic had a massive problem: empty chairs. They were getting basic cleaning appointments, but losing highly profitable implant and Invisalign patients to a flashy competitor down the street. Their old website looked like it was built in 2012.",
     execution: [
       "Completely redesigned the website to position Dr. Sharma as the premium authority in the city",
@@ -46,7 +46,7 @@ const stories = [
     client: "The Daily Grind",
     industry: "Cafes & Hospitality",
     timeline: "Month 1 to Month 3",
-    image: "/images/seo-dashboard.jpg",
+    image: "/images/cafe-dashboard.jpg",
     situation: "A popular premium cafe that was dying during afternoon hours. Worse, 60% of their revenue was coming through food delivery apps that were taking a 30% commission, bleeding their margins dry.",
     execution: [
       "Built a direct-ordering web app that bypassed delivery platforms entirely",
@@ -64,7 +64,7 @@ const stories = [
     client: "SecureLife Advisors",
     industry: "Insurance & Finance",
     timeline: "Month 1 to Month 5",
-    image: "/images/brokerage-crm.jpg",
+    image: "/images/insurance-dashboard.jpg",
     situation: "Rahul and his team of 5 insurance advisors were cold-calling lists and buying shared leads. Morale was low, rejection was high, and they had no predictable way to generate their own pipeline of people actually looking for term insurance.",
     execution: [
       "Built a 'Term Insurance Calculator' lead magnet that captured name, number, and salary details",

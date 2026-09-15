@@ -1,25 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, MapPin, Phone, Clock, Send, CheckCircle, ArrowRight, Users, TrendingUp, Zap, Trophy } from "lucide-react";
+import { CheckCircle, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SiteShell } from "@/components/site-shell";
-
-const trustStats = [
-  { icon: Users, value: "50+", label: "Clients Served" },
-  { icon: TrendingUp, value: "+146%", label: "Avg. Lead Increase" },
-  { icon: Trophy, value: "96%", label: "Client Retention" },
-  { icon: Zap, value: "21 Days", label: "Avg. Launch Time" },
-];
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    company: "",
     phone: "",
-    website: "",
-    budget: "",
+    business: "",
     message: "",
   });
 
@@ -34,108 +27,150 @@ export default function ContactPage() {
 
   return (
     <SiteShell>
-      <main>
-        {/* Hero */}
-        <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-16">
-          <div className="text-center max-w-3xl mx-auto">
-            <p className="text-sm font-bold tracking-[0.2em] text-[#0b6fa8] uppercase">Let&apos;s build your growth engine</p>
-            <h1 className="mt-4 text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl">
-              Ready to stop losing clients?
-            </h1>
-            <p className="mt-4 text-lg leading-8 text-zinc-600">
-              Tell us about your business. We&apos;ll review your application and get back within 24 hours with a personalized growth audit.
-            </p>
-          </div>
-        </section>
+      <main className="bg-white min-h-screen relative pt-20 pb-24">
+        
+        {/* Optional: extremely subtle vertical grid lines to match reference */}
+        <div className="absolute inset-0 pointer-events-none opacity-[0.02]" style={{
+          backgroundImage: `linear-gradient(to right, #000 1px, transparent 1px)`,
+          backgroundSize: `33.333% 100%`,
+        }} />
 
-        {/* Form + Info Grid */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+        {/* Subtle brand blue glow in top left to connect with theme */}
+        <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] bg-[#0b6fa8]/10 blur-[100px] rounded-full pointer-events-none" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-16 lg:gap-24 items-start">
             
-            {/* Left — Application Form */}
-            <div className="rounded-[32px] border border-[#cdeeff] bg-white p-8 shadow-[0_24px_80px_rgba(11,111,168,0.05)] sm:p-10">
+            {/* LEFT COLUMN — Huge Typography & Clean Info Grid */}
+            <div className="pt-4 lg:pt-12">
+              <p className="text-[11px] font-bold tracking-[0.25em] text-[#0b6fa8] uppercase mb-8">
+                / get in touch /
+              </p>
+              <h1 className="text-5xl sm:text-6xl lg:text-[4.5rem] font-medium tracking-tight text-zinc-950 mb-8 leading-[1.05]">
+                Ready to stop<br />losing clients?
+              </h1>
+              <p className="text-lg leading-relaxed text-zinc-500 mb-16 max-w-md">
+                Tell us about your business. We&apos;ll review your application and get back within 24 hours with a personalized growth audit.
+              </p>
+
+              {/* Minimalist Info Grid */}
+              <div className="grid grid-cols-2 gap-x-12 gap-y-12 max-w-xl">
+                <div>
+                  <h3 className="text-[15px] font-bold text-zinc-950 mb-3">Call or WhatsApp</h3>
+                  <div className="text-zinc-500 text-sm space-y-1.5">
+                    <a href="tel:+919799917630" className="hover:text-[#0b6fa8] transition-colors block">+91 97999 17630</a>
+                    <a href="tel:+919351673834" className="hover:text-[#0b6fa8] transition-colors block">+91 93516 73834</a>
+                  </div>
+                </div>
+                
+                <div>
+                  <h3 className="text-[15px] font-bold text-zinc-950 mb-3">Our Location</h3>
+                  <p className="text-zinc-500 text-sm leading-relaxed">
+                    Mansarover Plaza, Madhyam Marg<br />
+                    Mansarovar, Jaipur<br />
+                    Rajasthan 302020
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-[15px] font-bold text-zinc-950 mb-3">Email</h3>
+                  <a href="mailto:metatoppers@gmail.com" className="text-zinc-500 text-sm hover:text-[#0b6fa8] transition-colors">
+                    metatoppers@gmail.com
+                  </a>
+                </div>
+
+                <div>
+                  <h3 className="text-[15px] font-bold text-zinc-950 mb-3">Availability</h3>
+                  <p className="text-zinc-500 text-sm leading-relaxed">
+                    We take on a strictly limited number of clients each month to ensure absolute focus.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT COLUMN — Clean Form Card (Tinted with brand colors) */}
+            <div className="bg-[#f4fbff] rounded-[2.5rem] p-8 sm:p-12 border border-[#cdeeff]">
               <AnimatePresence mode="wait">
                 {!submitted ? (
                   <motion.form
                     key="form"
                     initial={{ opacity: 1 }}
-                    exit={{ opacity: 0, y: -20 }}
+                    exit={{ opacity: 0, scale: 0.98 }}
                     onSubmit={handleSubmit}
-                    className="space-y-5"
+                    className="flex flex-col h-full"
                   >
-                    <h2 className="text-xl font-bold text-zinc-950 mb-6">Apply for Your Free Growth Audit</h2>
-                    
-                    <div className="grid gap-5 sm:grid-cols-2">
-                      <div>
-                        <label htmlFor="name" className="block text-sm font-semibold text-zinc-700 mb-2">Full Name *</label>
-                        <input id="name" name="name" type="text" required value={formData.name} onChange={handleChange}
-                          placeholder="John Smith"
-                          className="w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#0b6fa8]/30 focus:border-[#0b6fa8] transition-all" />
-                      </div>
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-semibold text-zinc-700 mb-2">Email *</label>
-                        <input id="email" name="email" type="email" required value={formData.email} onChange={handleChange}
-                          placeholder="john@company.com"
-                          className="w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#0b6fa8]/30 focus:border-[#0b6fa8] transition-all" />
-                      </div>
-                    </div>
-
-                    <div className="grid gap-5 sm:grid-cols-2">
-                      <div>
-                        <label htmlFor="phone" className="block text-sm font-semibold text-zinc-700 mb-2">Phone</label>
-                        <input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange}
-                          placeholder="+91 98765 43210"
-                          className="w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#0b6fa8]/30 focus:border-[#0b6fa8] transition-all" />
-                      </div>
-                      <div>
-                        <label htmlFor="website" className="block text-sm font-semibold text-zinc-700 mb-2">Website URL</label>
-                        <input id="website" name="website" type="url" value={formData.website} onChange={handleChange}
-                          placeholder="https://yoursite.com"
-                          className="w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#0b6fa8]/30 focus:border-[#0b6fa8] transition-all" />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="budget" className="block text-sm font-semibold text-zinc-700 mb-2">Monthly Budget Range</label>
-                      <select id="budget" name="budget" required value={formData.budget} onChange={handleChange}
-                        className="w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 focus:outline-none focus:ring-2 focus:ring-[#0b6fa8]/30 focus:border-[#0b6fa8] transition-all appearance-none">
-                        <option value="" disabled>Select your budget range</option>
-                        <option value="under-25k">Under ₹25,000/mo</option>
-                        <option value="25k-50k">₹25,000 – ₹50,000/mo</option>
-                        <option value="50k-1l">₹50,000 – ₹1,00,000/mo</option>
-                        <option value="1l-plus">₹1,00,000+/mo</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-semibold text-zinc-700 mb-2">Tell us about your project</label>
-                      <textarea id="message" name="message" rows={4} value={formData.message} onChange={handleChange}
-                        placeholder="What are your biggest challenges? What does success look like for you?"
-                        className="w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#0b6fa8]/30 focus:border-[#0b6fa8] transition-all resize-none" />
-                    </div>
-
-                    <button type="submit"
-                      className="w-full group inline-flex items-center justify-center gap-2 rounded-xl bg-[#0b6fa8] px-6 py-4 text-[15px] font-bold text-white transition-all duration-300 hover:bg-[#085c8b] hover:-translate-y-0.5 hover:shadow-lg">
-                      <Send size={18} />
-                      Submit Application
-                      <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
-                    </button>
-                    <p className="text-center text-xs text-zinc-400">
-                      We review every application within 24 hours. No spam, ever.
+                    <h2 className="text-[28px] font-medium text-zinc-950 mb-3">Tell us about your business</h2>
+                    <p className="text-sm text-zinc-500 mb-10 leading-relaxed">
+                      Define your goals and identify areas where we can add value to your business. Takes 30 seconds.
                     </p>
+                    
+                    <div className="space-y-8 flex-grow">
+                      
+                      <div className="grid gap-8 sm:grid-cols-2">
+                        <div>
+                          <input id="name" name="name" type="text" required value={formData.name} onChange={handleChange}
+                            placeholder="Full name *"
+                            className="w-full bg-transparent px-0 py-3 text-[15px] text-zinc-900 placeholder:text-zinc-400 transition-colors rounded-none !border-t-0 !border-l-0 !border-r-0 !border-b !border-b-zinc-200 focus:!border-b-[#0b6fa8] !shadow-none focus:!ring-0 focus:!shadow-none focus:!outline-none" />
+                        </div>
+                        <div>
+                          <input id="email" name="email" type="email" required value={formData.email} onChange={handleChange}
+                            placeholder="Email address *"
+                            className="w-full bg-transparent px-0 py-3 text-[15px] text-zinc-900 placeholder:text-zinc-400 transition-colors rounded-none !border-t-0 !border-l-0 !border-r-0 !border-b !border-b-zinc-200 focus:!border-b-[#0b6fa8] !shadow-none focus:!ring-0 focus:!shadow-none focus:!outline-none" />
+                        </div>
+                      </div>
+
+                      <div className="grid gap-8 sm:grid-cols-2">
+                        <div>
+                          <input id="phone" name="phone" type="tel" required value={formData.phone} onChange={handleChange}
+                            placeholder="Phone number *"
+                            className="w-full bg-transparent px-0 py-3 text-[15px] text-zinc-900 placeholder:text-zinc-400 transition-colors rounded-none !border-t-0 !border-l-0 !border-r-0 !border-b !border-b-zinc-200 focus:!border-b-[#0b6fa8] !shadow-none focus:!ring-0 focus:!shadow-none focus:!outline-none" />
+                        </div>
+                        <div>
+                          <input id="company" name="company" type="text" required value={formData.company} onChange={handleChange}
+                            placeholder="Company name"
+                            className="w-full bg-transparent px-0 py-3 text-[15px] text-zinc-900 placeholder:text-zinc-400 transition-colors rounded-none !border-t-0 !border-l-0 !border-r-0 !border-b !border-b-zinc-200 focus:!border-b-[#0b6fa8] !shadow-none focus:!ring-0 focus:!shadow-none focus:!outline-none" />
+                        </div>
+                      </div>
+
+                      <div>
+                        <select id="business" name="business" required value={formData.business} onChange={handleChange}
+                          className={`w-full bg-transparent px-0 py-3 text-[15px] transition-colors rounded-none !border-t-0 !border-l-0 !border-r-0 !border-b !border-b-zinc-200 focus:!border-b-[#0b6fa8] !shadow-none focus:!ring-0 focus:!shadow-none focus:!outline-none ${formData.business ? 'text-zinc-900' : 'text-zinc-400'}`}>
+                          <option value="" disabled>Select your industry *</option>
+                          <option value="real-estate" className="text-zinc-900">Real Estate</option>
+                          <option value="healthcare" className="text-zinc-900">Healthcare / Clinic</option>
+                          <option value="hospitality" className="text-zinc-900">Cafe / Restaurant / Hotel</option>
+                          <option value="insurance" className="text-zinc-900">Insurance / Finance</option>
+                          <option value="other" className="text-zinc-900">Other</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <textarea id="message" name="message" rows={3} value={formData.message} onChange={handleChange}
+                          placeholder="What's your biggest challenge right now?"
+                          className="w-full bg-transparent px-0 py-3 text-[15px] text-zinc-900 placeholder:text-zinc-400 transition-colors rounded-none resize-none !border-t-0 !border-l-0 !border-r-0 !border-b !border-b-zinc-200 focus:!border-b-[#0b6fa8] !shadow-none focus:!ring-0 focus:!shadow-none focus:!outline-none" />
+                      </div>
+                    </div>
+
+                    <div className="mt-12">
+                      <button type="submit"
+                        className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#0b6fa8] px-8 py-4 text-[15px] font-medium text-white transition-all duration-300 hover:bg-[#085c8b] hover:shadow-lg hover:-translate-y-0.5">
+                        Get My Free Audit
+                        <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+                      </button>
+                    </div>
                   </motion.form>
                 ) : (
                   <motion.div
                     key="success"
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="text-center py-16"
+                    className="text-center py-20 flex flex-col items-center justify-center h-full"
                   >
-                    <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-emerald-50 mb-6">
-                      <CheckCircle size={40} className="text-emerald-500" />
+                    <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#0b6fa8]/10 mb-6">
+                      <CheckCircle size={40} className="text-[#0b6fa8]" />
                     </div>
-                    <h3 className="text-2xl font-bold text-zinc-950">Application Received!</h3>
-                    <p className="mt-4 text-base text-zinc-600 max-w-md mx-auto">
+                    <h3 className="text-3xl font-medium text-zinc-950">Application Received!</h3>
+                    <p className="mt-4 text-base text-zinc-500 max-w-sm mx-auto">
                       We&apos;ll review your details and get back to you within 24 hours with your personalized growth audit.
                     </p>
                   </motion.div>
@@ -143,81 +178,8 @@ export default function ContactPage() {
               </AnimatePresence>
             </div>
 
-            {/* Right — Contact Info */}
-            <div className="space-y-5">
-              {/* Availability */}
-              <div className="rounded-[24px] border border-[#cdeeff] bg-[#f2fbff] p-6">
-                <p className="text-sm font-bold tracking-[0.15em] text-[#0b6fa8] uppercase">Limited Availability</p>
-                <p className="mt-3 text-sm leading-relaxed text-zinc-600">
-                  We take on a limited number of clients each month to ensure every project gets our full attention.
-                </p>
-              </div>
-
-              {/* Contact Cards */}
-              <div className="space-y-3">
-                <div className="flex items-start gap-3 rounded-[20px] border border-[#cdeeff] bg-white p-5 shadow-sm">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#f2fbff] text-[#0b6fa8]">
-                    <MapPin size={18} />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-zinc-950 text-sm">Office</p>
-                    <p className="text-sm text-zinc-600">Mansarover Plaza, Madhyam Marg, Mansarovar, Jaipur, Rajasthan 302020</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 rounded-[20px] border border-[#cdeeff] bg-white p-5 shadow-sm">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#f2fbff] text-[#0b6fa8]">
-                    <Phone size={18} />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-zinc-950 text-sm">Phone</p>
-                    <div className="text-sm text-zinc-600">
-                      <a href="tel:+919799917630" className="hover:text-[#0b6fa8] transition-colors">+91 97999 17630</a>
-                      <br />
-                      <a href="tel:+919351673834" className="hover:text-[#0b6fa8] transition-colors">+91 93516 73834</a>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 rounded-[20px] border border-[#cdeeff] bg-white p-5 shadow-sm">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#f2fbff] text-[#0b6fa8]">
-                    <Mail size={18} />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-zinc-950 text-sm">Email</p>
-                    <a href="mailto:metatoppers@gmail.com" className="text-sm text-zinc-600 hover:text-[#0b6fa8] transition-colors">metatoppers@gmail.com</a>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 rounded-[20px] border border-[#cdeeff] bg-white p-5 shadow-sm">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#f2fbff] text-[#0b6fa8]">
-                    <Clock size={18} />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-zinc-950 text-sm">Response Time</p>
-                    <p className="text-sm text-zinc-600">We reply within 24 hours. Always.</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Trust Badge */}
-              <div className="rounded-[24px] border border-[#0b6fa8]/20 bg-gradient-to-br from-[#0b6fa8] to-[#085c8b] p-6 text-white">
-                <div className="grid grid-cols-2 gap-4">
-                  {trustStats.map((s) => {
-                    const Icon = s.icon;
-                    return (
-                      <div key={s.label} className="text-center">
-                        <Icon size={18} className="mx-auto text-blue-200 mb-2" />
-                        <p className="text-xl font-black text-white">{s.value}</p>
-                        <p className="text-[11px] font-medium text-blue-200 uppercase tracking-wider">{s.label}</p>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
           </div>
-        </section>
-
-        {/* Bottom spacing */}
-        <div className="h-16" />
+        </div>
       </main>
     </SiteShell>
   );
