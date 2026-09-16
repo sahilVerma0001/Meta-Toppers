@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Meta Toppers",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/api/og?title=Meta+Toppers",
         width: 1200,
         height: 630,
         alt: "Meta Toppers — Premium Web Design & Digital Marketing",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Meta Toppers — Premium Web Design & Digital Marketing",
     description: "We design high-converting websites and run data-driven marketing campaigns for ambitious brands.",
-    images: ["/og-image.jpg"],
+    images: ["/api/og?title=Meta+Toppers"],
   },
 };
 
