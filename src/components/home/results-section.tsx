@@ -47,17 +47,17 @@ export function ResultsSection() {
               <p className="text-lg font-bold text-zinc-950">{t.name}</p>
               
               {/* Before/After visual */}
-              <div className="mt-4 flex items-center gap-3">
-                <div className="rounded-lg bg-zinc-100 px-3 py-2">
+              <div className="mt-4 flex flex-wrap items-center gap-2 sm:gap-3 sm:flex-nowrap">
+                <div className="rounded-lg bg-zinc-100 px-2 py-2 sm:px-3">
                   <p className="text-[10px] font-bold text-zinc-400 uppercase">Before</p>
-                  <p className="text-sm font-bold text-zinc-500">{t.before}</p>
+                  <p className="text-[11px] font-bold text-zinc-500 sm:text-sm">{t.before}</p>
                 </div>
-                <ArrowRight size={16} className="text-[#0b6fa8] shrink-0" />
-                <div className="rounded-lg bg-[#f2fbff] border border-[#cdeeff] px-3 py-2">
+                <ArrowRight size={14} className="text-[#0b6fa8] shrink-0 sm:w-4 sm:h-4" />
+                <div className="rounded-lg bg-[#f2fbff] border border-[#cdeeff] px-2 py-2 sm:px-3">
                   <p className="text-[10px] font-bold text-[#0b6fa8] uppercase">After</p>
-                  <p className="text-sm font-bold text-[#0b6fa8]">{t.after}</p>
+                  <p className="text-[11px] font-bold text-[#0b6fa8] sm:text-sm">{t.after}</p>
                 </div>
-                <span className="ml-auto inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-bold text-emerald-600">
+                <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-emerald-50 px-2 py-1 text-[11px] font-bold text-emerald-600 sm:ml-auto sm:px-2.5 sm:text-xs">
                   <TrendingUp size={12} /> {t.lift}
                 </span>
               </div>

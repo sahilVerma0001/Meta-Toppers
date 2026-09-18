@@ -12,9 +12,9 @@ const stats = [
 ];
 
 const team = [
-  { name: "Kartik Sharma", role: "Founder & Strategy Lead", initials: "KS", color: "from-[#0b6fa8] to-[#085c8b]" },
-  { name: "Sahil Parjapat", role: "SEO & Marketing Lead", initials: "SP", color: "from-violet-600 to-violet-700" },
-  { name: "Khushi Nama", role: "Full-Stack Developer", initials: "KN", color: "from-emerald-600 to-emerald-700" },
+  { name: "Kartik Sharma", role: "Growth Mastermind", initials: "KS", color: "from-[#0b6fa8] to-[#085c8b]" },
+  { name: "Sahil Parjapat", role: "Traffic Strategist", initials: "SP", color: "from-violet-600 to-violet-700" },
+  { name: "Khushi Nama", role: "Digital Architect", initials: "KN", color: "from-emerald-600 to-emerald-700" },
 ];
 
 const values = [
