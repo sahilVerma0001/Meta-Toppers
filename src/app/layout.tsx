@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   // Use Vercel preview URL for testing. Change back to metatoppers.com before final launch!
   metadataBase: new URL("https://meta-topperslive.vercel.app"),
   title: {
-    default: "Meta Toppers | Premium Web Design & Digital Marketing Agency",
+    default: "Meta Toppers | Business Growth Partners",
     template: "%s | Meta Toppers",
   },
   description:

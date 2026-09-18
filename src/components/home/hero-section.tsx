@@ -69,37 +69,54 @@ export function HeroSection() {
           animate="visible"
           className="flex flex-col justify-center"
         >
-          <motion.div variants={lineVariant} className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-red-200 bg-red-50/80 px-4 py-2.5 text-sm text-red-600 shadow-sm backdrop-blur-sm">
-            <ShieldCheck size={16} />
-            97% of business websites convert under 2%. Is yours one of them?
+          {/* Badge */}
+          <motion.div variants={lineVariant} className="mb-8 inline-flex w-fit items-center gap-2.5 rounded-full border border-[#cdeeff] bg-white/60 px-5 py-2.5 text-[13px] font-semibold tracking-wide text-[#0b6fa8] shadow-sm backdrop-blur-md uppercase">
+            <ShieldCheck size={14} />
+            Growth Partners
           </motion.div>
 
-          <motion.h1 variants={lineVariant} className="max-w-3xl text-5xl font-bold leading-[0.95] tracking-[-0.04em] text-zinc-950 sm:text-6xl lg:text-7xl">
-            Your Website Is Losing Your Clients.
-            <div className="text-[#0b6fa8]"> Every. Single. Day.</div>
+          {/* Headline */}
+          <motion.h1 variants={lineVariant} className="max-w-2xl text-[2.75rem] font-extrabold leading-[1.08] tracking-[-0.03em] text-zinc-950 sm:text-[3.5rem] lg:text-[4.25rem]">
+            You Deserve More Clients{" "}
+            <span className="text-[#0b6fa8]">Than You&apos;re Getting.</span>
           </motion.h1>
 
-          <motion.p variants={lineVariant} className="mt-6 max-w-2xl text-lg leading-8 text-zinc-600 sm:text-xl">
-            Most businesses bleed money through a website that looks fine but converts nobody. We build systems that turn <span className="font-semibold text-zinc-900">2% conversion into 8–12%</span> — on autopilot.
+          {/* Accent line */}
+          <motion.div variants={lineVariant} className="mt-6 h-1 w-16 rounded-full bg-gradient-to-r from-[#0b6fa8] to-[#0b6fa8]/30" />
+
+          {/* Subtext — split into two clear thoughts */}
+          <motion.p variants={lineVariant} className="mt-5 max-w-xl text-[17px] leading-[1.7] text-zinc-500">
+            Your work is exceptional. Your online presence isn&apos;t.
+          </motion.p>
+          <motion.p variants={lineVariant} className="mt-2 max-w-xl text-[17px] leading-[1.7] text-zinc-600">
+            We bridge that gap with <span className="font-semibold text-zinc-900">custom strategy, design, and marketing systems</span> — built to scale your business, not just look pretty.
           </motion.p>
 
-          <motion.div variants={lineVariant} className="mt-8 flex flex-col gap-4 sm:flex-row">
+          {/* CTAs */}
+          <motion.div variants={lineVariant} className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a
               href="#apply"
-              className="cta-pulse btn-interactive group inline-flex items-center justify-center gap-2 rounded-full bg-[#0b6fa8] px-8 py-4 text-[15px] font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#085c8b]"
+              className="cta-pulse btn-interactive group inline-flex items-center justify-center gap-2 rounded-full bg-[#0b6fa8] px-8 py-4 text-[15px] font-semibold text-white shadow-lg shadow-[#0b6fa8]/20 transition-all duration-300 hover:-translate-y-1 hover:bg-[#085c8b] hover:shadow-xl hover:shadow-[#0b6fa8]/30"
             >
-              Apply for a Free Audit
+              Start Growing Today
               <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>
             <a
               href="https://wa.me/919351673834"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-interactive group inline-flex items-center justify-center gap-2 rounded-full border border-[#cdeeff] bg-white/90 px-8 py-4 text-[15px] font-semibold text-zinc-800 backdrop-blur-sm transition-all duration-300 hover:border-[#25D366] hover:bg-[#25D366]/10 hover:text-[#25D366]"
+              className="btn-interactive group inline-flex items-center justify-center gap-2 rounded-full border border-zinc-200 bg-white/90 px-8 py-4 text-[15px] font-semibold text-zinc-800 backdrop-blur-sm transition-all duration-300 hover:border-[#25D366] hover:bg-[#25D366]/10 hover:text-[#25D366]"
             >
               <WhatsApp className="h-[18px] w-[18px] transition-transform duration-300 group-hover:scale-110 text-[#25D366]" />
               Let&apos;s Talk
             </a>
+          </motion.div>
+
+          {/* Trust signals */}
+          <motion.div variants={lineVariant} className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] text-zinc-400">
+            <span className="flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> 50+ Brands Scaled</span>
+            <span className="flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> 96% Retention Rate</span>
+            <span className="flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> Results in 21 Days</span>
           </motion.div>
         </motion.div>
 
