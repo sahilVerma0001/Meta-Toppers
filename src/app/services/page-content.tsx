@@ -1,55 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, PanelsTopLeft, Orbit, Sparkles, CheckCircle, TrendingUp, Zap } from "lucide-react";
+import { ArrowRight, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import { SiteShell } from "@/components/site-shell";
 import { CTASection } from "@/components/home/cta-section";
-
-const services = [
-  {
-    icon: PanelsTopLeft,
-    label: "Engine 01",
-    title: "Websites That Convert",
-    problem: "Your website looks fine — but it's not bringing in clients. Visitors land, look around, and leave.",
-    solution: [
-      "Custom-designed for your specific audience & brand",
-      "Conversion-optimized from the first pixel to the last CTA",
-      "Mobile-first, blazing fast, SEO-ready out of the box",
-    ],
-    stat: "+250%",
-    statLabel: "avg. lead increase after launch",
-    accent: "from-[#0b6fa8] to-[#085c8b]",
-  },
-  {
-    icon: Orbit,
-    label: "Engine 02",
-    title: "SEO & Ads That Pay For Themselves",
-    problem: "You're invisible on Google while your competitors dominate page 1. Your ad budget disappears with nothing to show.",
-    solution: [
-      "Data-driven SEO that builds compounding organic traffic",
-      "Paid campaigns connected to real revenue, not vanity clicks",
-      "Full ROI dashboard — know exactly what every rupee earns",
-    ],
-    stat: "3×",
-    statLabel: "avg. organic traffic increase",
-    accent: "from-emerald-600 to-emerald-700",
-  },
-  {
-    icon: Sparkles,
-    label: "Engine 03",
-    title: "Lead Gen On Autopilot",
-    problem: "You're chasing leads manually. No system, no funnel, no predictability. Growth feels random.",
-    solution: [
-      "Automated funnels that qualify and deliver leads 24/7",
-      "Social ad campaigns targeting buyers ready to act",
-      "CRM integration so no lead ever falls through the cracks",
-    ],
-    stat: "42",
-    statLabel: "qualified leads/week (avg. client)",
-    accent: "from-violet-600 to-violet-700",
-  },
-];
+import { servicesData } from "@/data/services/index";
 
 const processSteps = [
   { num: "01", title: "Free Growth Audit", copy: "We analyze your website, competitors, and market. You get a clear report showing where you're losing money." },
@@ -63,95 +19,99 @@ export default function ServicesPage() {
     <SiteShell>
       <main>
         {/* Hero */}
-        <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-16">
-          <div className="rounded-[32px] border border-[#cdeeff] bg-white p-8 shadow-[0_24px_80px_rgba(11,111,168,0.05)] sm:p-10 lg:p-14 text-center">
+        <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-24">
+          <div className="rounded-[32px] border border-[#cdeeff] bg-white p-8 shadow-[0_24px_80px_rgba(11,111,168,0.05)] sm:p-10 lg:p-20 text-center">
             <div className="max-w-3xl mx-auto flex flex-col items-center">
-              <p className="text-sm font-bold tracking-[0.2em] text-[#0b6fa8] uppercase">Our Services</p>
-              <h1 className="mt-4 text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl lg:text-6xl">
+              <motion.p 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-sm font-bold tracking-[0.2em] text-[#0b6fa8] uppercase"
+              >
+                Our Services Ecosystem
+              </motion.p>
+              <motion.h1 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="mt-4 text-4xl font-black tracking-tight text-zinc-950 sm:text-5xl lg:text-7xl"
+              >
                 Stop guessing.<br />Start growing.
-              </h1>
-              <p className="mt-6 text-lg leading-8 text-zinc-600 max-w-2xl text-center">
+              </motion.h1>
+              <motion.p 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="mt-6 text-lg leading-8 text-zinc-600 max-w-2xl text-center"
+              >
                 Three integrated engines that work together to turn your digital presence from a cost center into a revenue machine. No fluff. No vanity metrics. Just clients.
-              </p>
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center w-full">
-                <Link href="#apply" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0b6fa8] px-8 py-4 text-[15px] font-semibold text-white transition-all hover:-translate-y-1 hover:bg-[#085c8b]">
-                  Apply for a Free Audit
-                  <ArrowRight size={18} />
-                </Link>
-              </div>
+              </motion.p>
             </div>
           </div>
         </section>
 
-        {/* Service Deep-Dives */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-8 space-y-6">
-          {services.map((s, i) => {
+        {/* Services Hub Directory */}
+        <section className="mx-auto max-w-7xl px-6 lg:px-8 space-y-8 lg:space-y-12">
+          {servicesData.map((s, i) => {
             const Icon = s.icon;
             return (
-              <div key={s.title} className="rounded-[32px] border border-zinc-200 bg-white/85 p-6 shadow-[0_24px_80px_rgba(17,24,39,0.05)] backdrop-blur sm:p-8 lg:p-10">
-                <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
+              <motion.div 
+                key={s.title} 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                className="group relative overflow-hidden rounded-[32px] border border-zinc-200 bg-white p-8 shadow-sm transition-all hover:shadow-xl sm:p-10 lg:p-12"
+              >
+                {/* Background glow on hover */}
+                <div className={`absolute -inset-4 bg-gradient-to-br ${s.accent} opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-5`} />
+                
+                <div className="relative z-10 grid gap-10 lg:grid-cols-[1fr_auto] lg:items-center">
                   
-                  {/* Left — Problem + Solution */}
-                  <div className={i % 2 === 1 ? "lg:order-2" : ""}>
-                    <div className="flex items-center gap-3 mb-5">
-                      <div className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${s.accent} text-white`}>
-                        <Icon size={20} />
+                  {/* Left — Intro */}
+                  <div>
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${s.accent} text-white shadow-lg`}>
+                        <Icon size={24} />
                       </div>
-                      <span className="text-xs font-bold tracking-[0.2em] text-zinc-400 uppercase">{s.label}</span>
+                      <span className="text-sm font-bold tracking-[0.2em] text-zinc-400 uppercase">{s.label}</span>
                     </div>
                     <h2 className="text-3xl font-bold tracking-tight text-zinc-950 sm:text-4xl">{s.title}</h2>
-                    
-                    {/* The Problem */}
-                    <div className="mt-5 rounded-xl border border-red-100 bg-red-50/50 p-4">
-                      <p className="text-sm font-semibold text-red-600 mb-1">The problem:</p>
-                      <p className="text-sm text-red-700/80">{s.problem}</p>
-                    </div>
-
-                    {/* The Solution */}
-                    <div className="mt-4 space-y-3">
-                      {s.solution.map((point) => (
-                        <div key={point} className="flex items-start gap-3">
-                          <CheckCircle size={18} className="text-emerald-500 shrink-0 mt-0.5" />
-                          <p className="text-sm text-zinc-700 leading-relaxed">{point}</p>
-                        </div>
-                      ))}
-                    </div>
+                    <p className="mt-4 text-lg text-zinc-600 max-w-xl leading-relaxed">{s.shortDescription}</p>
                   </div>
 
-                  {/* Right — Stat Card */}
-                  <div className={`flex items-center justify-center ${i % 2 === 1 ? "lg:order-1" : ""}`}>
-                    <div className={`w-full max-w-sm rounded-[28px] bg-gradient-to-br ${s.accent} p-8 text-center text-white shadow-lg`}>
-                      <p className="text-6xl font-black tracking-tight sm:text-7xl">{s.stat}</p>
-                      <p className="mt-3 text-sm font-medium text-white/80">{s.statLabel}</p>
-                      <div className="mt-6 flex items-center justify-center gap-2 rounded-full bg-white/15 px-4 py-2 text-sm font-semibold backdrop-blur-sm">
-                        <TrendingUp size={16} />
-                        Proven across 50+ clients
-                      </div>
-                    </div>
+                  {/* Right — CTA */}
+                  <div className="flex flex-col sm:flex-row items-center gap-4 lg:justify-end">
+                    <Link 
+                      href={`/services/${s.slug}`}
+                      className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-zinc-200 bg-white px-8 py-4 text-base font-bold text-zinc-900 transition-all hover:border-zinc-300 hover:bg-zinc-50"
+                    >
+                      View Case Studies & Process
+                      <ArrowRight size={18} />
+                    </Link>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </section>
 
         {/* How It Works — Process */}
-        <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-16">
-          <div className="rounded-[32px] border border-[#cdeeff] bg-[#f2fbff] p-6 shadow-[0_24px_80px_rgba(11,111,168,0.05)] sm:p-8 lg:p-10">
-            <div className="text-center mb-10">
+        <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-32">
+          <div className="rounded-[32px] border border-[#cdeeff] bg-[#f2fbff] p-8 shadow-[0_24px_80px_rgba(11,111,168,0.05)] sm:p-12 lg:p-16">
+            <div className="text-center mb-16">
               <p className="text-sm font-bold tracking-[0.2em] text-[#0b6fa8] uppercase">How it works</p>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-zinc-950 sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-black tracking-tight text-zinc-950 sm:text-5xl">
                 From first call to live results in 21 days.
               </h2>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {processSteps.map((step) => (
-                <div key={step.num} className="group rounded-[24px] border border-[#cdeeff] bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-md">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0b6fa8] text-white text-sm font-bold mb-4">
+                <div key={step.num} className="group rounded-[24px] border border-[#cdeeff] bg-white p-8 transition-all hover:-translate-y-2 hover:shadow-lg">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#0b6fa8] to-[#085c8b] text-white text-base font-bold mb-6 shadow-md">
                     {step.num}
                   </div>
-                  <h3 className="text-lg font-bold text-zinc-950">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-600">{step.copy}</p>
+                  <h3 className="text-xl font-bold text-zinc-950">{step.title}</h3>
+                  <p className="mt-3 text-base leading-relaxed text-zinc-600">{step.copy}</p>
                 </div>
               ))}
             </div>
@@ -159,18 +119,20 @@ export default function ServicesPage() {
         </section>
 
         {/* Pricing Philosophy */}
-        <section className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="rounded-[32px] border border-[#0b6fa8]/30 bg-gradient-to-br from-[#0b6fa8] to-[#085c8b] p-8 text-white shadow-[0_24px_80px_rgba(11,111,168,0.15)] sm:p-10 lg:p-14 text-center">
-            <Zap size={32} className="mx-auto text-blue-200 mb-4" />
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+        <section className="mx-auto max-w-7xl px-6 lg:px-8 pb-20">
+          <div className="rounded-[32px] border border-[#0b6fa8]/30 bg-gradient-to-br from-[#0b6fa8] to-[#085c8b] p-8 text-white shadow-[0_24px_80px_rgba(11,111,168,0.2)] sm:p-12 lg:p-16 text-center">
+            <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-white/10 mb-6 backdrop-blur-md">
+              <Zap size={32} className="text-blue-200" />
+            </div>
+            <h2 className="text-4xl font-black tracking-tight sm:text-5xl">
               Custom pricing. Zero surprises.
             </h2>
-            <p className="mt-4 mx-auto max-w-2xl text-base leading-8 text-blue-100">
-              Every business is different, so every quote is tailored. You'll get a fixed price and a guaranteed timeline before we start — no hourly billing, no scope creep, no hidden fees.
+            <p className="mt-6 mx-auto max-w-2xl text-lg leading-relaxed text-blue-100">
+              Every business is different, so every quote is tailored. You&apos;ll get a fixed price and a guaranteed timeline before we start — no hourly billing, no scope creep, no hidden fees.
             </p>
-            <Link href="#apply" className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-[15px] font-bold text-[#0b6fa8] transition-all hover:-translate-y-1 hover:shadow-lg">
+            <Link href="#apply" className="mt-10 inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-bold text-[#0b6fa8] shadow-xl transition-transform hover:-translate-y-1">
               Get Your Custom Quote
-              <ArrowRight size={18} />
+              <ArrowRight size={20} />
             </Link>
           </div>
         </section>

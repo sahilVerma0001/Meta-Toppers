@@ -297,7 +297,7 @@ export function HeroSection() {
                 <p className="text-[13px] text-zinc-700 leading-snug">
                   &ldquo;They took us from 12 leads/week to 42. The ROI paid for the entire project in the first month.&rdquo;
                 </p>
-                <p className="mt-2 text-[11px] font-semibold text-zinc-500">Vikram Singh &middot; Founder, Elevate Realty</p>
+                <p className="mt-2 text-[11px] font-semibold text-zinc-500">Vikram Rathore &middot; Founder, Elevate Realty</p>
               </div>
             </div>
           </motion.div>

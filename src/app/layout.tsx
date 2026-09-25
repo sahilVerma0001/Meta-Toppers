@@ -13,21 +13,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  // Use Vercel preview URL for testing. Change back to metatoppers.com before final launch!
-  metadataBase: new URL("https://meta-topperslive.vercel.app"),
+  metadataBase: new URL("https://metatoppers.com"),
   title: {
     default: "Meta Toppers | Business Growth Partners",
     template: "%s | Meta Toppers",
   },
   description:
-    "We design high-converting websites and run data-driven marketing campaigns for ambitious brands. Strategy, design, and growth — all under one roof.",
+    "You deserve more clients than you're getting. Meta Toppers is your dedicated growth partner — we combine custom strategy, design, SEO, and marketing systems to scale your business.",
   icons: {
-    icon: "/MetaToppers-bg.png",
+    icon: "/favicon.ico",
     apple: "/MetaToppers-bg.png",
   },
   openGraph: {
-    title: "Meta Toppers — Premium Web Design & Digital Marketing",
-    description: "We design high-converting websites and run data-driven marketing campaigns for ambitious brands. Strategy, design, and growth — all under one roof.",
+    title: "Meta Toppers — Business Growth Partners",
+    description: "You deserve more clients than you're getting. We combine custom strategy, design, SEO, and marketing systems to scale your business.",
     url: "https://metatoppers.com",
     siteName: "Meta Toppers",
     images: [
@@ -35,7 +34,7 @@ export const metadata: Metadata = {
         url: "/api/og?title=Meta+Toppers",
         width: 1200,
         height: 630,
-        alt: "Meta Toppers — Premium Web Design & Digital Marketing",
+        alt: "Meta Toppers — Business Growth Partners",
       },
     ],
     locale: "en_US",
@@ -43,8 +42,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Meta Toppers — Premium Web Design & Digital Marketing",
-    description: "We design high-converting websites and run data-driven marketing campaigns for ambitious brands.",
+    title: "Meta Toppers — Business Growth Partners",
+    description: "You deserve more clients than you're getting. We combine custom strategy, design, SEO, and marketing systems to scale your business.",
     images: ["/api/og?title=Meta+Toppers"],
   },
 };
