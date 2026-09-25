@@ -191,7 +191,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
         {/* Mobile Nav Overlay */}
         {isMobileMenuOpen && (
-          <div className="absolute left-0 top-full w-full border-t border-zinc-100 border-b border-zinc-200/70 bg-white px-6 py-6 shadow-xl md:hidden">
+          <div className="absolute left-0 top-full w-full max-h-[calc(100vh-80px)] overflow-y-auto overscroll-contain border-t border-zinc-100 border-b border-zinc-200/70 bg-white px-6 pt-6 pb-24 shadow-xl md:hidden">
             <nav className="flex flex-col gap-5">
               {navLinks.map((link) => {
                 const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
